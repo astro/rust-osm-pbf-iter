@@ -57,27 +57,32 @@ impl<'a> Iterator for DenseNodesParser<'a> {
     type Item = Node<'a>;
 
     fn next(&mut self) -> Option<Self::Item> {
-        self.ids.next()
-            .and_then(|id| {
-                self.id += id;
+        None
+        // self.ids.next()
+        //     .and_then(|id| {
+        //         self.id += id;
 
-                self.lats.next()
-                    .and_then(|lat| {
-                        self.lat += lat;
+        //         self.lats.next()
+        //             .and_then(|lat| {
+        //                 self.lat += lat;
 
-                        self.lons.next()
-                            .map(|lon| {
-                                self.lon += lon;
+        //                 self.lons.next()
+        //                     .map(|lon| {
+        //                         self.lon += lon;
 
-                                Node {
-                                    id: self.id as u64,
-                                    lat: self.primitive_block.convert_lat(self.lat as f64),
-                                    lon: self.primitive_block.convert_lat(self.lon as f64),
-                                    info: None,
-                                    tags: NodeTags { }
-                                }
-                            })
-                    })
-            })
+        //                         Node {
+        //                             id: self.id as u64,
+        //                             lat: self.primitive_block.convert_lat(self.lat as f64),
+        //                             lon: self.primitive_block.convert_lat(self.lon as f64),
+        //                             info: None,
+        //                             tags_iter: TagsIter {
+        //                                 keys: PackedIter::new(&[]),
+        //                                 vals: PackedIter::new(&[]),
+        //                                 stringtable: &self.primitive_block.stringtable,
+        //                             },
+        //                         }
+        //                     })
+        //             })
+        //     })
     }
 }

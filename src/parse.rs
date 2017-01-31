@@ -14,12 +14,12 @@ const NANO: f64 = 1.0e-9;
 
 #[derive(Clone)]
 pub struct PrimitiveBlock<'a> {
-    stringtable: Vec<&'a str>,
+    pub stringtable: Vec<&'a str>,
     iter: MessageIter<'a>,
-    granularity: f64,
-    lat_offset: f64,
-    lon_offset: f64,
-    date_granularity: f64,
+    pub granularity: f64,
+    pub lat_offset: f64,
+    pub lon_offset: f64,
+    pub date_granularity: f64,
 }
 
 #[derive(Debug)]
@@ -35,7 +35,7 @@ pub struct Node<'a> {
     pub lat: f64,
     pub lon: f64,
     pub info: Option<InfoParser<'a>>,
-    pub tags: NodeTags,
+    tags_iter: TagsIter<'a>,
 }
 
 #[derive(Debug)]
@@ -51,6 +51,7 @@ pub struct Relation<'a> {
     pub id: u64,
     pub info: Option<InfoParser<'a>>,
     tags_iter: TagsIter<'a>,
+    rels_iter: RelationMembersIter<'a>,
 }
 
 #[derive(Clone)]
@@ -58,6 +59,70 @@ pub struct TagsIter<'a> {
     keys: PackedIter<'a, PackedVarint, u32>,
     vals: PackedIter<'a, PackedVarint, u32>,
     stringtable: &'a [&'a str],
+}
+
+#[derive(Clone, Debug)]
+pub enum RelationMemberType {
+    Node,
+    Way,
+    Relation,
+}
+
+#[derive(Clone)]
+pub struct RelationMembersIter<'a> {
+    roles_sid: PackedIter<'a, PackedVarint, i32>,
+    memids: DeltaEncodedIter<'a, PackedVarint, i64>,
+    memid: i64,
+    types: PackedIter<'a, PackedVarint, u32>,
+    stringtable: &'a [&'a str],
+}
+
+macro_rules! some {
+    ($e: expr) => {
+        match $e {
+            Some(x) => x,
+            None => return None,
+        }
+    }
+}
+
+impl<'a> Iterator for RelationMembersIter<'a> {
+    type Item = (&'a str, u64, RelationMemberType);
+
+    fn next(&mut self) -> Option<Self::Item> {
+        let role_sid = some!(self.roles_sid.next()) as usize;
+        let role = if role_sid < self.stringtable.len() {
+            self.stringtable[role_sid as usize]
+        } else {
+            return None
+        };
+
+        let memid_delta = some!(self.memids.next());
+        self.memid += memid_delta;
+
+        let memtype = match self.types.next() {
+            Some(0) => RelationMemberType::Node,
+            Some(1) => RelationMemberType::Way,
+            Some(2) => RelationMemberType::Relation,
+            _ => return None,
+        };
+
+        Some((role, self.memid as u64, RelationMemberType::Node))
+    }
+}
+
+impl<'a> fmt::Debug for RelationMembersIter<'a> {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        try!(write!(f, "{{"));
+        for (i, (role, id, reltype)) in self.clone().enumerate() {
+            if i > 0 {
+                try!(write!(f, ","));
+            }
+            try!(write!(f, " {:?} {} {:?}", reltype, id, role));
+        }
+        try!(write!(f, " }}"));
+        Ok(())
+    }
 }
 
 impl<'a> PrimitiveBlock<'a> {
@@ -198,7 +263,11 @@ impl<'a> Node<'a> {
             lat: 0.0,
             lon: 0.0,
             info: None,
-            tags: NodeTags { }
+            tags_iter: TagsIter {
+                keys: PackedIter::new(&[]),
+                vals: PackedIter::new(&[]),
+                stringtable: &primitive_block.stringtable,
+            },
         };
 
         let iter = MessageIter::new(data);
@@ -206,6 +275,10 @@ impl<'a> Node<'a> {
             match m.tag {
                 1 =>
                     node.id = Into::<i64>::into(m.value) as u64,
+                2 =>
+                    node.tags_iter.keys = PackedIter::new(*m.value),
+                3 =>
+                    node.tags_iter.vals = PackedIter::new(*m.value),
                 4 =>
                     node.info = Some(InfoParser::new(*m.value)),
                 8 =>
@@ -221,6 +294,10 @@ impl<'a> Node<'a> {
         }
 
         node
+    }
+
+    pub fn tags(&self) -> TagsIter<'a> {
+        self.tags_iter.clone()
     }
 }
 
@@ -279,6 +356,13 @@ impl<'a> Relation<'a> {
                 vals: PackedIter::new(&[]),
                 stringtable: &primitive_block.stringtable,
             },
+            rels_iter: RelationMembersIter {
+                roles_sid: PackedIter::new(&[]),
+                memids: DeltaEncodedIter::new(ParseValue::LengthDelimited(&[])),
+                memid: 0,
+                types: PackedIter::new(&[]),
+                stringtable: &primitive_block.stringtable,
+            },
         };
 
         for m in iter.clone() {
@@ -291,6 +375,12 @@ impl<'a> Relation<'a> {
                     relation.tags_iter.vals = PackedIter::new(*m.value),
                 4 =>
                     relation.info = Some(InfoParser::new(*m.value)),
+                8 =>
+                    relation.rels_iter.roles_sid = PackedIter::new(*m.value),
+                9 =>
+                    relation.rels_iter.memids = DeltaEncodedIter::new(m.value),
+                10 =>
+                    relation.rels_iter.types = PackedIter::new(*m.value),
                 _ => ()
             }
         }
@@ -300,6 +390,10 @@ impl<'a> Relation<'a> {
 
     pub fn tags(&self) -> TagsIter<'a> {
         self.tags_iter.clone()
+    }
+
+    pub fn members(&self) -> RelationMembersIter<'a> {
+        self.rels_iter.clone()
     }
 }
 
@@ -337,8 +431,4 @@ impl<'a> fmt::Debug for TagsIter<'a> {
         try!(write!(f, " }}"));
         Ok(())
     }
-}
-
-#[derive(Debug)]
-pub struct NodeTags {
 }
