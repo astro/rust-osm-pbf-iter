@@ -146,7 +146,7 @@ impl<'a> Iterator for PrimitivesIterator<'a> {
                             match m.tag {
                                 // node
                                 1 => {
-                                    let node = parse_node(self.primitive_block, *m.value);
+                                    let node = Node::parse(self.primitive_block, *m.value);
                                     Some(Primitive::Node(node))
                                 },
                                 // dense_nodes
@@ -157,12 +157,12 @@ impl<'a> Iterator for PrimitivesIterator<'a> {
                                 },
                                 // way
                                 3 => {
-                                    let way = parse_way(self.primitive_block, *m.value);
+                                    let way = Way::parse(self.primitive_block, *m.value);
                                     Some(Primitive::Way(way))
                                 },
                                 // relation
                                 4 => {
-                                    let relation = parse_relation(self.primitive_block, *m.value);
+                                    let relation = Relation::parse(self.primitive_block, *m.value);
                                     Some(Primitive::Relation(relation))
                                 },
                                 // skip
@@ -190,70 +190,72 @@ impl<'a> Iterator for PrimitivesIterator<'a> {
     }
 }
 
-fn parse_node<'a>(primitive_block: &'a PrimitiveBlock<'a>, data: &'a [u8]) -> Node<'a> {
-    let mut node = Node {
-        id: 0,
-        lat: 0.0,
-        lon: 0.0,
-        info: None,
-        tags: NodeTags { }
-    };
+impl<'a> Node<'a> {
+    fn parse(primitive_block: &'a PrimitiveBlock<'a>, data: &'a [u8]) -> Self {
+        let mut node = Node {
+            id: 0,
+            lat: 0.0,
+            lon: 0.0,
+            info: None,
+            tags: NodeTags { }
+        };
 
-    let iter = MessageIter::new(data);
-    for m in iter.clone() {
-        match m.tag {
-            1 =>
-                node.id = Into::<i64>::into(m.value) as u64,
-            4 =>
-                node.info = Some(InfoParser::new(*m.value)),
-            8 =>
-                node.lat = primitive_block.convert_lat(
-                    Into::<i64>::into(m.value) as f64
-                ),
-            9 =>
-                node.lon = primitive_block.convert_lon(
-                    Into::<i64>::into(m.value) as f64
-                ),
-            _ => ()
+        let iter = MessageIter::new(data);
+        for m in iter.clone() {
+            match m.tag {
+                1 =>
+                    node.id = Into::<i64>::into(m.value) as u64,
+                4 =>
+                    node.info = Some(InfoParser::new(*m.value)),
+                8 =>
+                    node.lat = primitive_block.convert_lat(
+                        Into::<i64>::into(m.value) as f64
+                    ),
+                9 =>
+                    node.lon = primitive_block.convert_lon(
+                        Into::<i64>::into(m.value) as f64
+                    ),
+                _ => ()
+            }
         }
+
+        node
     }
-
-    node
-}
-
-fn parse_way<'a>(primitive_block: &'a PrimitiveBlock<'a>, data: &'a [u8]) -> Way<'a> {
-    let mut way = Way {
-        id: 0,
-        info: None,
-        tags_iter: TagsIter {
-            keys: PackedIter::new(&[]),
-            vals: PackedIter::new(&[]),
-            stringtable: &primitive_block.stringtable,
-        },
-        refs_iter: WayRefsIter::new(ParseValue::LengthDelimited(&[])),
-    };
-
-    let iter = MessageIter::new(data);
-    for m in iter.clone() {
-        match m.tag {
-            1 =>
-                way.id = Into::into(m.value),
-            2 =>
-                way.tags_iter.keys = PackedIter::new(*m.value),
-            3 =>
-                way.tags_iter.vals = PackedIter::new(*m.value),
-            4 =>
-                way.info = Some(InfoParser::new(*m.value)),
-            8 =>
-                way.refs_iter = WayRefsIter::new(m.value),
-            _ => ()
-        }
-    }
-
-    way
 }
 
 impl<'a> Way<'a> {
+    fn parse(primitive_block: &'a PrimitiveBlock<'a>, data: &'a [u8]) -> Self {
+        let mut way = Way {
+            id: 0,
+            info: None,
+            tags_iter: TagsIter {
+                keys: PackedIter::new(&[]),
+                vals: PackedIter::new(&[]),
+                stringtable: &primitive_block.stringtable,
+            },
+            refs_iter: WayRefsIter::new(ParseValue::LengthDelimited(&[])),
+        };
+
+        let iter = MessageIter::new(data);
+        for m in iter.clone() {
+            match m.tag {
+                1 =>
+                    way.id = Into::into(m.value),
+                2 =>
+                    way.tags_iter.keys = PackedIter::new(*m.value),
+                3 =>
+                    way.tags_iter.vals = PackedIter::new(*m.value),
+                4 =>
+                    way.info = Some(InfoParser::new(*m.value)),
+                8 =>
+                    way.refs_iter = WayRefsIter::new(m.value),
+                _ => ()
+            }
+        }
+
+        way
+    }
+
     pub fn tags(&self) -> TagsIter<'a> {
         self.tags_iter.clone()
     }
@@ -291,36 +293,6 @@ impl<'a> Iterator for WayRefsIter<'a> {
     }
 }
 
-fn parse_relation<'a>(primitive_block: &'a PrimitiveBlock<'a>, data: &'a [u8]) -> Relation<'a> {
-    let iter = MessageIter::new(data);
-
-    let mut relation = Relation {
-        id: 0,
-        info: None,
-        tags_iter: TagsIter {
-            keys: PackedIter::new(&[]),
-            vals: PackedIter::new(&[]),
-            stringtable: &primitive_block.stringtable,
-        },
-    };
-
-    for m in iter.clone() {
-        match m.tag {
-            1 =>
-                relation.id = Into::into(m.value),
-            2 =>
-                relation.tags_iter.keys = PackedIter::new(*m.value),
-            3 =>
-                relation.tags_iter.vals = PackedIter::new(*m.value),
-            4 =>
-                relation.info = Some(InfoParser::new(*m.value)),
-            _ => ()
-        }
-    }
-
-    relation
-}
-
 impl<'a> fmt::Debug for WayRefsIter<'a> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         try!(write!(f, "["));
@@ -336,6 +308,36 @@ impl<'a> fmt::Debug for WayRefsIter<'a> {
 }
 
 impl<'a> Relation<'a> {
+    fn parse(primitive_block: &'a PrimitiveBlock<'a>, data: &'a [u8]) -> Self {
+        let iter = MessageIter::new(data);
+
+        let mut relation = Relation {
+            id: 0,
+            info: None,
+            tags_iter: TagsIter {
+                keys: PackedIter::new(&[]),
+                vals: PackedIter::new(&[]),
+                stringtable: &primitive_block.stringtable,
+            },
+        };
+
+        for m in iter.clone() {
+            match m.tag {
+                1 =>
+                    relation.id = Into::into(m.value),
+                2 =>
+                    relation.tags_iter.keys = PackedIter::new(*m.value),
+                3 =>
+                    relation.tags_iter.vals = PackedIter::new(*m.value),
+                4 =>
+                    relation.info = Some(InfoParser::new(*m.value)),
+                _ => ()
+            }
+        }
+
+        relation
+    }
+
     pub fn tags(&self) -> TagsIter<'a> {
         self.tags_iter.clone()
     }
