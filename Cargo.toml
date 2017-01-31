@@ -1,0 +1,17 @@
+[package]
+name = "osm_pbf_iter"
+version = "0.1.0"
+authors = ["Astro <astro@spaceboyz.net>"]
+
+[profile.release]
+debug = true
+lto = true
+opt-level = 3
+
+[dependencies]
+byteorder = "~0.5.3"
+flate2 = "~0.2.14"
+
+[dependencies.protobuf_iter]
+version = "*"
+path = "../protobuf-iter"
