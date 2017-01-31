@@ -7,6 +7,7 @@ use protobuf_iter::*;
 
 use parse_dense::*;
 use info::*;
+use delta::*;
 
 
 const NANO: f64 = 1.0e-9;
@@ -25,7 +26,7 @@ pub struct PrimitiveBlock<'a> {
 pub enum Primitive<'a> {
     Node(Node<'a>),
     Way(Way<'a>),
-    Relation(Relation<'a>)
+    Relation(Relation<'a>),
 }
 
 #[derive(Debug)]
@@ -42,7 +43,7 @@ pub struct Way<'a> {
     pub id: u64,
     pub info: Option<InfoParser<'a>>,
     tags_iter: TagsIter<'a>,
-    refs_iter: WayRefsIter<'a>,
+    refs_iter: DeltaEncodedIter<'a, PackedVarint, i64>,
 }
 
 #[derive(Debug)]
@@ -233,7 +234,7 @@ impl<'a> Way<'a> {
                 vals: PackedIter::new(&[]),
                 stringtable: &primitive_block.stringtable,
             },
-            refs_iter: WayRefsIter::new(ParseValue::LengthDelimited(&[])),
+            refs_iter: DeltaEncodedIter::new(ParseValue::LengthDelimited(&[])),
         };
 
         let iter = MessageIter::new(data);
@@ -248,7 +249,7 @@ impl<'a> Way<'a> {
                 4 =>
                     way.info = Some(InfoParser::new(*m.value)),
                 8 =>
-                    way.refs_iter = WayRefsIter::new(m.value),
+                    way.refs_iter = DeltaEncodedIter::new(m.value),
                 _ => ()
             }
         }
@@ -260,52 +261,11 @@ impl<'a> Way<'a> {
         self.tags_iter.clone()
     }
 
-    pub fn refs(&self) -> WayRefsIter<'a> {
+    pub fn refs(&self) -> DeltaEncodedIter<'a, PackedVarint, i64> {
         self.refs_iter.clone()
     }
 }
 
-#[derive(Clone)]
-pub struct WayRefsIter<'a> {
-    values: PackedIter<'a, PackedVarint, i64>,
-    last: u64,
-}
-
-impl<'a> WayRefsIter<'a> {
-    pub fn new(value: ParseValue<'a>) -> Self {
-        WayRefsIter {
-            values: From::from(value),
-            last: 0,
-        }
-    }
-}
-
-impl<'a> Iterator for WayRefsIter<'a> {
-    type Item = u64;
-
-    fn next(&mut self) -> Option<Self::Item> {
-        self.values.next()
-            .map(|value| {
-                let current = (self.last as i64 + value) as u64;
-                self.last = current;
-                current
-            })
-    }
-}
-
-impl<'a> fmt::Debug for WayRefsIter<'a> {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        try!(write!(f, "["));
-        for (i, val) in self.clone().enumerate() {
-            if i > 0 {
-                try!(write!(f, ","));
-            }
-            try!(write!(f, " {:?}", val));
-        }
-        try!(write!(f, " }}"));
-        Ok(())
-    }
-}
 
 impl<'a> Relation<'a> {
     fn parse(primitive_block: &'a PrimitiveBlock<'a>, data: &'a [u8]) -> Self {

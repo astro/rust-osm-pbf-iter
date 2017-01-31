@@ -9,3 +9,4 @@ mod parse;
 pub use parse::*;
 mod parse_dense;
 mod info;
+mod delta;
