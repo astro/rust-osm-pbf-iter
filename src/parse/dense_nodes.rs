@@ -2,7 +2,7 @@ use std::convert::From;
 use std::iter::FlatMap;
 
 use protobuf_iter::*;
-use parse::*;
+use super::*;
 
 pub struct DenseNodesParser<'a> {
     primitive_block: &'a PrimitiveBlock<'a>,

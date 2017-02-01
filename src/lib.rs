@@ -7,6 +7,4 @@ pub use blob_reader::*;
 pub mod blob;
 mod parse;
 pub use parse::*;
-mod parse_dense;
-mod info;
 mod delta;
