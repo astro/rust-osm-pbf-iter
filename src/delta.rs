@@ -38,6 +38,6 @@ impl<'a, P: Packed<'a>, T: Clone + Add<T, Output=T> + From<<P as Packed<'a>>::It
 
 impl<'a, P: Clone + Packed<'a>, T: fmt::Debug + Clone + Add<T, Output=T> + From<<P as Packed<'a>>::Item> + Default> fmt::Debug for DeltaEncodedIter<'a, P, T> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        self.inner.clone().collect::<Vec<T>>().fmt(f)
+        self.clone().collect::<Vec<T>>().fmt(f)
     }
 }
