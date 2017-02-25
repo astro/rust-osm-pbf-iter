@@ -8,3 +8,4 @@ pub mod blob;
 mod parse;
 pub use parse::*;
 mod delta;
+mod delimited;

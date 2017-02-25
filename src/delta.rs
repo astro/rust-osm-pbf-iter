@@ -1,5 +1,4 @@
 use std::convert::From;
-use std::str::from_utf8;
 use std::iter::*;
 use std::fmt;
 use std::default::Default;

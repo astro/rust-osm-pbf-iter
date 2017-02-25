@@ -1,18 +1,14 @@
-use std::convert::From;
-use std::iter::FlatMap;
-
 use protobuf_iter::*;
+use delta::DeltaEncodedIter;
+use delimited::DelimitedIter;
 use super::*;
 
 pub struct DenseNodesParser<'a> {
     primitive_block: &'a PrimitiveBlock<'a>,
-    id: i64,
-    ids: PackedIter<'a, PackedVarint, i64>,
-    lat: i64,
-    lats: PackedIter<'a, PackedVarint, i64>,
-    lon: i64,
-    lons: PackedIter<'a, PackedVarint, i64>,
-    keys_vals: PackedIter<'a, PackedVarint, i32>,
+    ids: DeltaEncodedIter<'a, PackedVarint, i64>,
+    lats: DeltaEncodedIter<'a, PackedVarint, i64>,
+    lons: DeltaEncodedIter<'a, PackedVarint, i64>,
+    keys_vals: DelimitedIter<'a, PackedVarint, u32>,
 }
 
 macro_rules! some {
@@ -28,27 +24,35 @@ impl<'a> DenseNodesParser<'a> {
     pub fn new(primitive_block: &'a PrimitiveBlock<'a>, data: &'a [u8]) -> Option<Self> {
         let iter = MessageIter::new(data);
 
+        // println!("keys_vals: {:?}", some!(iter.clone()
+        //               .tag::<ParseValue<'a>>(10)
+        //               .nth(0)).packed_varints::<u32>().collect::<Vec<u32>>());
         Some(DenseNodesParser {
             primitive_block: primitive_block,
-            id: 0,
-            ids: some!(iter.clone()
-                       .tag::<ParseValue<'a>>(1)
-                       .nth(0)
-            ).packed_varints(),
-            lat: 0,
-            lats: some!(iter.clone()
+            ids: DeltaEncodedIter::new(
+                some!(iter.clone()
+                      .tag::<ParseValue<'a>>(1)
+                      .nth(0)
+                )
+            ),
+            lats: DeltaEncodedIter::new(
+                some!(iter.clone()
                         .tag::<ParseValue<'a>>(8)
                         .nth(0)
-            ).packed_varints(),
-            lon: 0,
-            lons: some!(iter.clone()
-                        .tag::<ParseValue<'a>>(9)
-                        .nth(0)
-            ).packed_varints(),
-            keys_vals: some!(iter.clone()
-                             .tag::<ParseValue<'a>>(10)
-                             .nth(0)
-            ).packed_varints(),
+                )
+            ),
+            lons: DeltaEncodedIter::new(
+                some!(iter.clone()
+                      .tag::<ParseValue<'a>>(9)
+                      .nth(0)
+                )
+            ),
+            keys_vals: DelimitedIter::new(
+                some!(iter.clone()
+                      .tag::<ParseValue<'a>>(10)
+                      .nth(0)
+                )
+            ),
         })
     }
 }
@@ -57,32 +61,32 @@ impl<'a> Iterator for DenseNodesParser<'a> {
     type Item = Node<'a>;
 
     fn next(&mut self) -> Option<Self::Item> {
-        None
-        // self.ids.next()
-        //     .and_then(|id| {
-        //         self.id += id;
+        let mut tags = vec![];
+        let mut keys_vals = some!(self.keys_vals.next()).into_iter();
+        loop {
+            let k = match keys_vals.next() {
+                Some(k) =>
+                    self.primitive_block.stringtable[k as usize],
+                None => break,
+            };
+            let v = match keys_vals.next() {
+                Some(v) =>
+                    self.primitive_block.stringtable[v as usize],
+                None => break,
+            };
+            tags.push((k, v));
+        }
 
-        //         self.lats.next()
-        //             .and_then(|lat| {
-        //                 self.lat += lat;
-
-        //                 self.lons.next()
-        //                     .map(|lon| {
-        //                         self.lon += lon;
-
-        //                         Node {
-        //                             id: self.id as u64,
-        //                             lat: self.primitive_block.convert_lat(self.lat as f64),
-        //                             lon: self.primitive_block.convert_lat(self.lon as f64),
-        //                             info: None,
-        //                             tags_iter: TagsIter {
-        //                                 keys: PackedIter::new(&[]),
-        //                                 vals: PackedIter::new(&[]),
-        //                                 stringtable: &self.primitive_block.stringtable,
-        //                             },
-        //                         }
-        //                     })
-        //             })
-        //     })
+        Some(Node {
+            id: some!(self.ids.next()) as u64,
+            lat: self.primitive_block.convert_lat(
+                some!(self.lats.next()) as f64
+            ),
+            lon: self.primitive_block.convert_lon(
+                some!(self.lons.next()) as f64
+            ),
+            info: None,
+            tags: tags,
+        })
     }
 }
