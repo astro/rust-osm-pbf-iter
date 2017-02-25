@@ -60,7 +60,7 @@ impl<'a> Iterator for RelationMembersIter<'a> {
             _ => return None,
         };
 
-        Some((role, self.memid as u64, RelationMemberType::Node))
+        Some((role, self.memid as u64, memtype))
     }
 }
 
