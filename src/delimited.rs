@@ -25,7 +25,7 @@ impl<'a, P: Packed<'a>, T: Clone + Add<T, Output=T> + From<<P as Packed<'a>>::It
     fn next(&mut self) -> Option<Self::Item> {
         let mut result = vec![];
 
-        while let Some(el) = self.inner.next() {
+        for el in &mut self.inner {
             // == 0?
             if el == Default::default() {
                 break
