@@ -12,15 +12,16 @@ use osm_pbf_iter::*;
 
 type Stats = [u64; 3];
 
-fn blobs_worker(req_rx: Receiver<Vec<u8>>, res_tx: SyncSender<Stats>) {
+fn blobs_worker(req_rx: Receiver<Blob>, res_tx: SyncSender<Stats>) {
     let mut stats = [0; 3];
 
     loop {
-        let data = match req_rx.recv() {
-            Ok(data) => data,
+        let blob = match req_rx.recv() {
+            Ok(blob) => blob,
             Err(_) => break,
         };
 
+        let data = blob.into_data();
         let primitive_block = PrimitiveBlock::parse(&data);
         for primitive in primitive_block.primitives() {
             match primitive {
@@ -58,12 +59,10 @@ fn main() {
 
         let mut w = 0;
         for blob in &mut reader {
-            let data = blob.into_data();
-
             let req_tx = &workers[w].0;
             w = (w + 1) % cpus;
 
-            req_tx.send(data).unwrap();
+            req_tx.send(blob).unwrap();
         }
 
         let mut stats = [0; 3];
