@@ -13,13 +13,14 @@ fn main() {
         let f = File::open(&arg).unwrap();
         for blob in BlobReader::new(f) {
             let data = blob.into_data();
-            println!("blob: {}", data.len());
+            println!("blob: {} KB", data.len() / 1024);
             let primitive_block = PrimitiveBlock::parse(&data);
             for primitive in primitive_block.primitives() {
                 match primitive {
-                    Primitive::Node(node) =>
-                        stats[0] += 1,
-                        // println!("node {} ({:.4} {:.4})", node.id, node.lat, node.lon),
+                    Primitive::Node(node) => {
+                        stats[0] += 1;
+                        println!("{:?}", node);
+                    },
                     Primitive::Way(way) => {
                         stats[1] += 1;
                         println!("{:?}", way);

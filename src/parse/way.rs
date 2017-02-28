@@ -2,13 +2,13 @@ use protobuf_iter::*;
 
 use delta::DeltaEncodedIter;
 use super::primitive_block::PrimitiveBlock;
-use super::info::InfoParser;
+use super::info::Info;
 use super::tags::TagsIter;
 
 #[derive(Debug)]
 pub struct Way<'a> {
     pub id: u64,
-    pub info: Option<InfoParser<'a>>,
+    pub info: Option<Info<'a>>,
     tags_iter: TagsIter<'a>,
     refs_iter: DeltaEncodedIter<'a, PackedVarint, i64>,
 }
@@ -32,7 +32,7 @@ impl<'a> Way<'a> {
                 3 =>
                     way.tags_iter.set_values(*m.value),
                 4 =>
-                    way.info = Some(InfoParser::new(*m.value)),
+                    way.info = Some(Info::parse(&primitive_block.stringtable, *m.value)),
                 8 =>
                     way.refs_iter = DeltaEncodedIter::new(m.value),
                 _ => ()

@@ -1,6 +1,7 @@
 use protobuf_iter::*;
 use delta::DeltaEncodedIter;
 use delimited::DelimitedIter;
+use dense_info::DenseInfoParser;
 use super::*;
 
 pub struct DenseNodesParser<'a> {
@@ -8,6 +9,7 @@ pub struct DenseNodesParser<'a> {
     ids: DeltaEncodedIter<'a, PackedVarint, i64>,
     lats: DeltaEncodedIter<'a, PackedVarint, i64>,
     lons: DeltaEncodedIter<'a, PackedVarint, i64>,
+    infos: Option<DenseInfoParser<'a>>,
     keys_vals: DelimitedIter<'a, PackedVarint, u32>,
 }
 
@@ -27,6 +29,10 @@ impl<'a> DenseNodesParser<'a> {
         // println!("keys_vals: {:?}", some!(iter.clone()
         //               .tag::<ParseValue<'a>>(10)
         //               .nth(0)).packed_varints::<u32>().collect::<Vec<u32>>());
+        // println!("infos: {:?}", iter.clone()
+        //          .tag::<ParseValue<'a>>(5)
+        //          .nth(0));
+
         Some(DenseNodesParser {
             primitive_block: primitive_block,
             ids: DeltaEncodedIter::new(
@@ -47,6 +53,12 @@ impl<'a> DenseNodesParser<'a> {
                       .nth(0)
                 )
             ),
+            infos: iter.clone()
+                .tag::<ParseValue<'a>>(5)
+                .nth(0)
+                .and_then(|value|
+                     DenseInfoParser::new(&primitive_block, *value)
+                ),
             keys_vals: DelimitedIter::new(
                 some!(iter.clone()
                       .tag::<ParseValue<'a>>(10)
@@ -77,15 +89,18 @@ impl<'a> Iterator for DenseNodesParser<'a> {
             tags.push((k, v));
         }
 
+        let info = self.infos.as_mut()
+            .and_then(|infos| infos.next());
+
         Some(Node {
             id: some!(self.ids.next()) as u64,
             lat: self.primitive_block.convert_lat(
-                some!(self.lats.next()) as f64
+                some!(self.lats.next())
             ),
             lon: self.primitive_block.convert_lon(
-                some!(self.lons.next()) as f64
+                some!(self.lons.next())
             ),
-            info: None,
+            info: info,
             tags: tags,
         })
     }

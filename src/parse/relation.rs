@@ -3,13 +3,13 @@ use protobuf_iter::*;
 
 use delta::DeltaEncodedIter;
 use super::primitive_block::PrimitiveBlock;
-use super::info::InfoParser;
+use super::info::Info;
 use super::tags::TagsIter;
 
 #[derive(Debug)]
 pub struct Relation<'a> {
     pub id: u64,
-    pub info: Option<InfoParser<'a>>,
+    pub info: Option<Info<'a>>,
     tags_iter: TagsIter<'a>,
     rels_iter: RelationMembersIter<'a>,
 }
@@ -107,7 +107,7 @@ impl<'a> Relation<'a> {
                 3 =>
                     relation.tags_iter.set_values(*m.value),
                 4 =>
-                    relation.info = Some(InfoParser::new(*m.value)),
+                    relation.info = Some(Info::parse(&primitive_block.stringtable, *m.value)),
                 8 =>
                     relation.rels_iter.roles_sid = PackedIter::new(*m.value),
                 9 =>

@@ -16,6 +16,10 @@ impl<R: Read> BlobReader<R> {
             read: r
         }
     }
+
+    pub fn to_inner(self) -> R {
+        self.read
+    }
 }
 
 impl<R: Read> Iterator for BlobReader<R> {

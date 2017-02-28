@@ -1,7 +1,7 @@
 use protobuf_iter::*;
 
 use super::primitive_block::PrimitiveBlock;
-use super::info::InfoParser;
+use super::info::Info;
 use super::tags::TagsIter;
 
 #[derive(Debug)]
@@ -9,7 +9,7 @@ pub struct Node<'a> {
     pub id: u64,
     pub lat: f64,
     pub lon: f64,
-    pub info: Option<InfoParser<'a>>,
+    pub info: Option<Info<'a>>,
     pub tags: Vec<(&'a str, &'a str)>,
 }
 
@@ -31,14 +31,14 @@ impl<'a> Node<'a> {
                 3 =>
                     tags_iter.set_values(*m.value),
                 4 =>
-                    info = Some(InfoParser::new(*m.value)),
+                    info = Some(Info::parse(&primitive_block.stringtable, *m.value)),
                 8 =>
                     lat = primitive_block.convert_lat(
-                        Into::<i64>::into(m.value) as f64
+                        Into::<i64>::into(m.value)
                     ),
                 9 =>
                     lon = primitive_block.convert_lon(
-                        Into::<i64>::into(m.value) as f64
+                        Into::<i64>::into(m.value)
                     ),
                 _ => ()
             }

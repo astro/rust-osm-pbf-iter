@@ -1,4 +1,4 @@
-use std::convert::From;
+use std::convert::Into;
 use std::iter::*;
 use std::fmt;
 use std::default::Default;
@@ -16,7 +16,7 @@ pub struct DeltaEncodedIter<'a, P: Packed<'a>, T: Clone + Add<T, Output=T> + Fro
 impl<'a, P: Packed<'a>, T: Clone + Add<T, Output=T> + From<<P as Packed<'a>>::Item> + Default> DeltaEncodedIter<'a, P, T> {
     pub fn new(value: ParseValue<'a>) -> Self {
         DeltaEncodedIter {
-            inner: From::from(value),
+            inner: value.into(),
             last: Default::default(),  // 0
         }
     }

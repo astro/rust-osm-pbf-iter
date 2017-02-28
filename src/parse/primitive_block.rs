@@ -12,10 +12,10 @@ const NANO: f64 = 1.0e-9;
 pub struct PrimitiveBlock<'a> {
     pub stringtable: Vec<&'a str>,
     iter: MessageIter<'a>,
-    pub granularity: f64,
-    pub lat_offset: f64,
-    pub lon_offset: f64,
-    pub date_granularity: f64,
+    pub granularity: u32,
+    pub lat_offset: i64,
+    pub lon_offset: i64,
+    pub date_granularity: u64,
 }
 
 #[derive(Debug)]
@@ -30,34 +30,39 @@ impl<'a> PrimitiveBlock<'a> {
         let mut result = PrimitiveBlock {
             stringtable: vec![],
             iter: MessageIter::new(&data),
-            granularity: 100.0,
-            lat_offset: 0.0,
-            lon_offset: 0.0,
-            date_granularity: 1000.0,
+            granularity: 100,
+            lat_offset: 0,
+            lon_offset: 0,
+            date_granularity: 1000,
         };
 
         for m in result.iter.clone() {
             match m.tag {
                 1 => result.stringtable = parse_stringtable(*m.value),
-                17 => result.granularity = NANO * Into::<u32>::into(m.value) as f64,
-                19 => result.lat_offset = NANO * Into::<i64>::into(m.value) as f64,
-                20 => result.lon_offset = NANO * Into::<i64>::into(m.value) as f64,
-                18 => result.date_granularity = Into::<u32>::into(m.value) as f64,
+                17 => result.granularity = Into::<u32>::into(m.value),
+                19 => result.lat_offset = Into::<i64>::into(m.value),
+                20 => result.lon_offset = Into::<i64>::into(m.value),
+                18 => result.date_granularity = Into::<u64>::into(m.value),
                 _ => ()
             }
         }
-        println!("[PrimitiveBlock] granularity: {:?} lat_offset: {:?} lon_offset: {:?}", result.granularity, result.lat_offset, result.lon_offset);
-        println!("stringtable: {:?}", result.stringtable);
+        // println!("[PrimitiveBlock] granularity: {:?} lat_offset: {:?} lon_offset: {:?}", result.granularity, result.lat_offset, result.lon_offset);
+        // println!("stringtable: {:?}", result.stringtable);
 
         result
     }
 
-    pub fn convert_lat(&self, lat: f64) -> f64 {
-        self.lat_offset + self.granularity * lat
+    pub fn convert_lat(&self, lat: i64) -> f64 {
+        NANO * (self.lat_offset + self.granularity as i64 * lat) as f64
     }
 
-    pub fn convert_lon(&self, lon: f64) -> f64 {
-        self.lon_offset + self.granularity * lon
+    pub fn convert_lon(&self, lon: i64) -> f64 {
+        NANO * (self.lon_offset + self.granularity as i64 * lon) as f64
+    }
+
+    // should return timestamp in milliseconds since 1970
+    pub fn convert_date(&self, date: u64) -> u64 {
+        self.date_granularity * date
     }
 
     // TODO: just Iterator
