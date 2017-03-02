@@ -78,10 +78,14 @@ fn main() {
         let duration = stop.duration_since(start);
         let duration = duration.as_secs() as f64 + (duration.subsec_nanos() as f64 / 1e9);
         let mut f = reader.to_inner();
-        let pos = f.seek(SeekFrom::Current(0)).unwrap();
-        let rate = pos as f64 / 1024f64 / 1024f64 / duration;
-        println!("Processed {} MB in {:.2} seconds ({:.2} MB/s)",
-                 pos / 1024 / 1024, duration, rate);
+        match f.seek(SeekFrom::Current(0)) {
+            Ok(pos) => {
+                let rate = pos as f64 / 1024f64 / 1024f64 / duration;
+                println!("Processed {} MB in {:.2} seconds ({:.2} MB/s)",
+                         pos / 1024 / 1024, duration, rate);
+            },
+            Err(_) => (),
+        }
 
         println!("{} - {} nodes, {} ways, {} relations", arg, stats[0], stats[1], stats[2]);
     }
