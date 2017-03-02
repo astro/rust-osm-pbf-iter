@@ -2,6 +2,8 @@
 name = "osm_pbf_iter"
 version = "0.1.0"
 authors = ["Astro <astro@spaceboyz.net>"]
+license = "GPL-3.0"
+description = "Parse OpenStreetMap .pbf dumps while trying to avoid copying"
 
 [profile.release]
 debug = true
@@ -12,7 +14,4 @@ opt-level = 3
 byteorder = "~0.5.3"
 flate2 = "~0.2.14"
 num_cpus = "~1.2.1"
-
-[dependencies.protobuf_iter]
-version = "*"
-path = "../protobuf-iter"
+protobuf_iter = "0.1.0"
