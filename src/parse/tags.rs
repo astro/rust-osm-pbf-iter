@@ -31,7 +31,7 @@ impl<'a> Iterator for TagsIter<'a> {
 
     fn next(&mut self) -> Option<Self::Item> {
         let obtain = |opt_iter: &mut Option<PackedIter<'a, PackedVarint, u32>>|
-            opt_iter.as_mut().and_then(|mut iter| iter.next());
+            opt_iter.as_mut().and_then(|iter| iter.next());
         match (obtain(&mut self.keys), obtain(&mut self.values)) {
             (Some(key_index), Some(val_index)) => {
                 let key_index = key_index as usize;
