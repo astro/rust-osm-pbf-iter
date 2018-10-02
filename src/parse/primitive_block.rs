@@ -1,4 +1,4 @@
-use std::str::from_utf8;
+use std::str::from_utf8_unchecked;
 use protobuf_iter::*;
 
 use super::node::Node;
@@ -79,7 +79,7 @@ impl<'a> PrimitiveBlock<'a> {
 fn parse_stringtable<'a>(data: &'a [u8]) -> Vec<&'a str> {
     MessageIter::new(&data)
         .tag(1)
-        .map(|s| from_utf8(s).expect("Malformed stringtable entry"))
+        .map(|s| unsafe { from_utf8_unchecked(s) })
         .collect()
 }
 
