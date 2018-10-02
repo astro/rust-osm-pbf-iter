@@ -12,6 +12,6 @@ opt-level = 3
 
 [dependencies]
 byteorder = "~0.5.3"
-flate2 = "~0.2.14"
+flate2 = { version = "1.0", features = ["zlib"], default-features = false }
 num_cpus = "~1.2.1"
 protobuf_iter = "0.1.0"
