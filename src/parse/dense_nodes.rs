@@ -54,7 +54,9 @@ impl<'a> Iterator for DenseNodesParser<'a> {
 
     fn next(&mut self) -> Option<Self::Item> {
         let mut keys_vals = self.keys_vals.next()?.into_iter();
-        let mut tags = Vec::with_capacity(keys_vals.clone().count());
+        let tag_hint = keys_vals.size_hint().1
+            .unwrap_or(keys_vals.size_hint().0);
+        let mut tags = Vec::with_capacity(tag_hint);
         loop {
             let k = match keys_vals.next() {
                 Some(k) =>

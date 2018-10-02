@@ -35,4 +35,9 @@ impl<'a, P: Packed<'a>, T: Clone + Add<T, Output=T> + From<<P as Packed<'a>>::It
 
         Some(result)
     }
+
+    fn size_hint(&self) -> (usize, Option<usize>) {
+        let hint = self.inner.size_hint();
+        (0, Some(hint.1.unwrap_or(hint.0)))
+    }
 }
