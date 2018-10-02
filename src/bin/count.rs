@@ -3,7 +3,7 @@ extern crate num_cpus;
 
 use std::env::args;
 use std::fs::File;
-use std::io::{Seek, SeekFrom};
+use std::io::{Seek, SeekFrom, BufReader};
 use std::time::Instant;
 use std::sync::mpsc::{sync_channel, SyncSender, Receiver};
 use std::thread;
@@ -54,7 +54,7 @@ fn main() {
 
         println!("Open {}", arg);
         let f = File::open(&arg).unwrap();
-        let mut reader = BlobReader::new(f);
+        let mut reader = BlobReader::new(BufReader::new(f));
         let start = Instant::now();
 
         let mut w = 0;

@@ -2,6 +2,7 @@ extern crate osm_pbf_iter;
 
 use std::env::args;
 use std::fs::File;
+use std::io::BufReader;
 
 use osm_pbf_iter::*;
 
@@ -11,7 +12,7 @@ fn main() {
 
         println!("Open {}", arg);
         let f = File::open(&arg).unwrap();
-        for blob in BlobReader::new(f) {
+        for blob in BlobReader::new(BufReader::new(f)) {
             let data = blob.into_data();
             println!("blob: {} KB", data.len() / 1024);
             let primitive_block = PrimitiveBlock::parse(&data);
