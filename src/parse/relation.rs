@@ -30,27 +30,18 @@ pub struct RelationMembersIter<'a> {
     stringtable: &'a [&'a str],
 }
 
-macro_rules! some {
-    ($e: expr) => {
-        match $e {
-            Some(x) => x,
-            None => return None,
-        }
-    }
-}
-
 impl<'a> Iterator for RelationMembersIter<'a> {
     type Item = (&'a str, u64, RelationMemberType);
 
     fn next(&mut self) -> Option<Self::Item> {
-        let role_sid = some!(self.roles_sid.next()) as usize;
+        let role_sid = self.roles_sid.next()? as usize;
         let role = if role_sid < self.stringtable.len() {
             self.stringtable[role_sid as usize]
         } else {
             return None
         };
 
-        let memid_delta = some!(self.memids.next());
+        let memid_delta = self.memids.next()?;
         self.memid += memid_delta;
 
         let memtype = match self.types.next() {
