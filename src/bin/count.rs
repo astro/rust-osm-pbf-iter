@@ -77,7 +77,7 @@ fn main() {
         let stop = Instant::now();
         let duration = stop.duration_since(start);
         let duration = duration.as_secs() as f64 + (duration.subsec_nanos() as f64 / 1e9);
-        let mut f = reader.to_inner();
+        let mut f = reader.into_inner();
         match f.seek(SeekFrom::Current(0)) {
             Ok(pos) => {
                 let rate = pos as f64 / 1024f64 / 1024f64 / duration;
