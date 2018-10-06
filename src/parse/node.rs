@@ -1,10 +1,11 @@
+use std::hash::{Hash, Hasher};
 use protobuf_iter::*;
 
 use super::primitive_block::PrimitiveBlock;
 use super::info::Info;
 use super::tags::TagsIter;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Node<'a> {
     pub id: u64,
     pub lat: f64,
@@ -51,5 +52,22 @@ impl<'a> Node<'a> {
             info: info,
             tags: tags_iter.collect(),
         }
+    }
+}
+
+impl<'a> Hash for Node<'a> {
+    fn hash<H>(&self, state: &mut H)
+    where
+        H: Hasher,
+    {
+        self.id.hash(state)
+    }
+}
+
+impl<'a> Eq for Node<'a> {}
+
+impl<'a> PartialEq for Node<'a> {
+    fn eq(&self, other: &Self) -> bool {
+        self.id == other.id
     }
 }

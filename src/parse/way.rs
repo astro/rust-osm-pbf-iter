@@ -1,3 +1,4 @@
+use std::hash::{Hash, Hasher};
 use protobuf_iter::*;
 
 use delta::DeltaEncodedIter;
@@ -5,7 +6,7 @@ use super::primitive_block::PrimitiveBlock;
 use super::info::Info;
 use super::tags::TagsIter;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Way<'a> {
     pub id: u64,
     pub info: Option<Info<'a>>,
@@ -51,3 +52,19 @@ impl<'a> Way<'a> {
     }
 }
 
+impl<'a> Hash for Way<'a> {
+    fn hash<H>(&self, state: &mut H)
+    where
+        H: Hasher,
+    {
+        self.id.hash(state)
+    }
+}
+
+impl<'a> Eq for Way<'a> {}
+
+impl<'a> PartialEq for Way<'a> {
+    fn eq(&self, other: &Self) -> bool {
+        self.id == other.id
+    }
+}

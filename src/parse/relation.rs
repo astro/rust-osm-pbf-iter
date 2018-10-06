@@ -1,4 +1,5 @@
 use std::fmt;
+use std::hash::{Hash, Hasher};
 use protobuf_iter::*;
 
 use delta::DeltaEncodedIter;
@@ -6,7 +7,7 @@ use super::primitive_block::PrimitiveBlock;
 use super::info::Info;
 use super::tags::TagsIter;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Relation<'a> {
     pub id: u64,
     pub info: Option<Info<'a>>,
@@ -14,7 +15,24 @@ pub struct Relation<'a> {
     rels_iter: RelationMembersIter<'a>,
 }
 
-#[derive(Clone, Debug)]
+impl<'a> Hash for Relation<'a> {
+    fn hash<H>(&self, state: &mut H)
+    where
+        H: Hasher,
+    {
+        self.id.hash(state)
+    }
+}
+
+impl<'a> Eq for Relation<'a> {
+}
+impl<'a> PartialEq for Relation<'a> {
+    fn eq(&self, other: &Self) -> bool {
+        self.id == other.id
+    }
+}
+
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone)]
 pub enum RelationMemberType {
     Node,
     Way,

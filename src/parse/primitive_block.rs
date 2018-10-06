@@ -18,7 +18,7 @@ pub struct PrimitiveBlock<'a> {
     pub date_granularity: u64,
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq, Eq, Hash, Clone)]
 pub enum Primitive<'a> {
     Node(Node<'a>),
     Way(Way<'a>),

@@ -2,7 +2,7 @@ use std::convert::Into;
 
 use protobuf_iter::*;
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone)]
 pub struct Info<'a> {
     pub version: Option<u32>,
     pub timestamp: Option<u64>,
