@@ -5,7 +5,7 @@ pub use self::node::Node;
 mod way;
 pub use self::way::Way;
 mod relation;
-pub use self::relation::Relation;
+pub use self::relation::{Relation, RelationMemberType};
 pub mod info;
 mod tags;
 mod dense_nodes;
