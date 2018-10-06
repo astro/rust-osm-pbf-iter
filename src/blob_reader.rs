@@ -17,22 +17,24 @@ impl<R: Read> BlobReader<R> {
         }
     }
 
-    pub fn to_inner(self) -> R {
+    pub fn into_inner(self) -> R {
         self.read
     }
-}
 
-impl<R: Read> Iterator for BlobReader<R> {
-    type Item = Blob;
+    #[deprecated]
+    #[inline]
+    pub fn to_inner(self) -> R {
+        self.into_inner()
+    }
 
-    fn next(&mut self) -> Option<Self::Item> {
+    pub fn read_blob(read: &mut R) -> Option<Blob> {
         let mut len_buf = [0; 4];
-        match self.read.read(&mut len_buf) {
+        match read.read(&mut len_buf) {
             Ok(4) => {
                 let len = BigEndian::read_u32(&len_buf) as usize;
                 let mut header_buf = Vec::with_capacity(len);
                 unsafe { header_buf.set_len(len); }
-                match self.read.read_exact(&mut header_buf) {
+                match read.read_exact(&mut header_buf) {
                     Ok(()) => (),
                     _ => return None
                 };
@@ -44,26 +46,34 @@ impl<R: Read> Iterator for BlobReader<R> {
                 let datasize = blob_header.datasize as usize;
                 let mut blob_buf = Vec::with_capacity(datasize);
                 unsafe { blob_buf.set_len(datasize); }
-                match self.read.read_exact(&mut blob_buf) {
+                match read.read_exact(&mut blob_buf) {
                     Ok(()) => (),
                     _ => return None
                 };
 
                 if ! blob_header.is_osm_data {
                     // retry next
-                    self.next()
+                    Self::read_blob(read)
                 } else {
                     match parse_blob(&blob_buf) {
                         Some(blob) =>
                             Some(blob),
                         None =>
                             // retry next
-                            self.next()
+                            Self::read_blob(read)
                     }
                 }
             },
             _ => None
         }
+    }
+}
+
+impl<R: Read> Iterator for BlobReader<R> {
+    type Item = Blob;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        Self::read_blob(&mut self.read)
     }
 }
 
