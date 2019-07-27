@@ -41,7 +41,11 @@ pub enum RelationMemberType {
 
 #[derive(Clone)]
 pub struct RelationMembersIter<'a> {
-    roles_sid: PackedIter<'a, PackedVarint, i32>,
+    // TODO: there is a workaround here, next field should be i32, but without zigzag()
+    // problem is that the library applies zigzag() to all i32.
+    // we only have u32(no-zigzag) and i32(zigzag) in rust, but there is int32(signed/no-zigzag) uint32(no-zigzag) sint32(signed/zigzag) in protobuf
+    // so the next field should be int32 (signed without zigzag)
+    roles_sid: PackedIter<'a, PackedVarint, u32>,
     memids: DeltaEncodedIter<'a, PackedVarint, i64>,
     types: PackedIter<'a, PackedVarint, u32>,
     stringtable: &'a [&'a str],
@@ -53,9 +57,9 @@ impl<'a> Iterator for RelationMembersIter<'a> {
     fn next(&mut self) -> Option<Self::Item> {
         let role_sid = self.roles_sid.next()? as usize;
         let role = if role_sid < self.stringtable.len() {
-            self.stringtable[role_sid as usize]
+            self.stringtable[role_sid]
         } else {
-            return None
+            "[[[INDEX ERROR]]]"
         };
 
         let memid = self.memids.next()? as u64;
