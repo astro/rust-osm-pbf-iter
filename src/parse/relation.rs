@@ -1,5 +1,6 @@
 use std::fmt;
 use std::hash::{Hash, Hasher};
+use std::convert::TryInto;
 use protobuf_iter::*;
 
 use delta::DeltaEncodedIter;
@@ -43,7 +44,6 @@ pub enum RelationMemberType {
 pub struct RelationMembersIter<'a> {
     roles_sid: PackedIter<'a, PackedVarint, i32>,
     memids: DeltaEncodedIter<'a, PackedVarint, i64>,
-    memid: i64,
     types: PackedIter<'a, PackedVarint, u32>,
     stringtable: &'a [&'a str],
 }
@@ -59,8 +59,8 @@ impl<'a> Iterator for RelationMembersIter<'a> {
             return None
         };
 
-        let memid_delta = self.memids.next()?;
-        self.memid += memid_delta;
+        let memid = self.memids.next()?
+            .try_into().ok()?;
 
         let memtype = match self.types.next() {
             Some(0) => RelationMemberType::Node,
@@ -69,7 +69,7 @@ impl<'a> Iterator for RelationMembersIter<'a> {
             _ => return None,
         };
 
-        Some((role, self.memid as u64, memtype))
+        Some((role, memid, memtype))
     }
 }
 
@@ -101,7 +101,6 @@ impl<'a> Relation<'a> {
             rels_iter: RelationMembersIter {
                 roles_sid: PackedIter::new(&[]),
                 memids: DeltaEncodedIter::new(ParseValue::LengthDelimited(&[])),
-                memid: 0,
                 types: PackedIter::new(&[]),
                 stringtable: &primitive_block.stringtable,
             },
