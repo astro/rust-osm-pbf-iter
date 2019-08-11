@@ -12,6 +12,6 @@ opt-level = 3
 
 [dependencies]
 byteorder = "1"
-flate2 = { version = "1", features = ["zlib"], default-features = false }
+flate2 = { version = "1", features = ["rust_backend"], default-features = false }
 num_cpus = "1"
 protobuf_iter = ">= 0.1.2"
