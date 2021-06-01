@@ -52,14 +52,14 @@ impl<'a> Iterator for TagsIter<'a> {
 
 impl<'a> fmt::Debug for TagsIter<'a> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        try!(write!(f, "{{"));
+        write!(f, "{{")?;
         for (i, (key, val)) in self.clone().enumerate() {
             if i > 0 {
-                try!(write!(f, ","));
+                write!(f, ",")?;
             }
-            try!(write!(f, " {}={:?}", key, val));
+            write!(f, " {}={:?}", key, val)?;
         }
-        try!(write!(f, " }}"));
+        write!(f, " }}")?;
         Ok(())
     }
 }

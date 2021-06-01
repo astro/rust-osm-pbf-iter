@@ -75,14 +75,14 @@ impl<'a> Iterator for RelationMembersIter<'a> {
 
 impl<'a> fmt::Debug for RelationMembersIter<'a> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        try!(write!(f, "{{"));
+        write!(f, "{{")?;
         for (i, (role, id, reltype)) in self.clone().enumerate() {
             if i > 0 {
-                try!(write!(f, ","));
+                write!(f, ",")?;
             }
-            try!(write!(f, " {:?} {} {:?}", reltype, id, role));
+            write!(f, " {:?} {} {:?}", reltype, id, role)?;
         }
-        try!(write!(f, " }}"));
+        write!(f, " }}")?;
         Ok(())
     }
 }
