@@ -21,10 +21,8 @@ impl<R: Read> BlobReader<R> {
         self.read
     }
 
-    #[deprecated]
-    #[inline]
-    pub fn to_inner(self) -> R {
-        self.into_inner()
+    pub fn get_mut(&mut self) -> &mut R {
+        &mut self.read
     }
 
     pub fn read_blob(read: &mut R) -> Option<Blob> {
