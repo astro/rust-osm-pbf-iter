@@ -1,5 +1,4 @@
-use std::io::{Cursor, Read};
-use flate2::read::ZlibDecoder;
+use libdeflater::{Decompressor, DecompressionError};
 
 
 pub enum Blob {
@@ -12,12 +11,23 @@ impl Blob {
         match self {
             Blob::Raw(data) => data,
             Blob::Zlib(compressed) => {
-                // TODO: Vec::with_capacity() from raw_size
-                let mut decompressed = Vec::new();
-                ZlibDecoder::new(Cursor::new(compressed))
-                    .read_to_end(&mut decompressed)
-                    .unwrap();
-                decompressed
+                let mut decompressor = Decompressor::new();
+                let mut expected_len = 4 * compressed.len();
+                let mut decompressed = Vec::with_capacity(expected_len);
+                loop {
+                    decompressed.resize(expected_len, 0);
+                    match decompressor.zlib_decompress(&compressed[..], &mut decompressed[..]) {
+                        Ok(len) => {
+                            assert!(len <= decompressed.len());
+                            decompressed.resize(len, 0);
+                            return decompressed
+                        }
+                        Err(DecompressionError::InsufficientSpace) =>
+                            expected_len *= 2,
+                        Err(DecompressionError::BadData) =>
+                            panic!("Bad zlib data"),
+                    }
+                }
             }
         }
     }

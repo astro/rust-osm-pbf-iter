@@ -1,6 +1,6 @@
 extern crate protobuf_iter;
 extern crate byteorder;
-extern crate flate2;
+extern crate libdeflater;
 
 pub mod blob_reader;
 pub use blob_reader::*;
