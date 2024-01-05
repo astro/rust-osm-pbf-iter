@@ -1,6 +1,3 @@
-extern crate osm_pbf_iter;
-extern crate num_cpus;
-
 use std::env::args;
 use std::fs::File;
 use std::io::{Seek, SeekFrom, BufReader};

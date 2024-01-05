@@ -1,7 +1,5 @@
 use protobuf_iter::*;
-use delta::DeltaEncodedIter;
-use info::Info;
-use super::primitive_block::PrimitiveBlock;
+use crate::{delta::DeltaEncodedIter, info::Info, primitive_block::PrimitiveBlock};
 
 pub struct DenseInfoParser<'a> {
     primitive_block: &'a PrimitiveBlock<'a>,

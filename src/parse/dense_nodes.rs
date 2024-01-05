@@ -1,8 +1,11 @@
 use protobuf_iter::*;
-use delta::DeltaEncodedIter;
-use delimited::DelimitedIter;
-use dense_info::DenseInfoParser;
-use super::*;
+use crate::{
+    delta::DeltaEncodedIter,
+    delimited::DelimitedIter,
+    dense_info::DenseInfoParser,
+    Node,
+    PrimitiveBlock,
+};
 
 pub struct DenseNodesParser<'a> {
     primitive_block: &'a PrimitiveBlock<'a>,

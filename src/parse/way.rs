@@ -1,10 +1,12 @@
 use std::hash::{Hash, Hasher};
 use protobuf_iter::*;
 
-use delta::DeltaEncodedIter;
-use super::primitive_block::PrimitiveBlock;
-use super::info::Info;
-use super::tags::TagsIter;
+use crate::{
+    delta::DeltaEncodedIter,
+    primitive_block::PrimitiveBlock,
+    info::Info,
+    tags::TagsIter,
+};
 
 #[derive(Debug, Clone)]
 pub struct Way<'a> {

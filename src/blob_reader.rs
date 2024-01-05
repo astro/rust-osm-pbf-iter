@@ -3,7 +3,7 @@ use std::io::Read;
 use byteorder::{ByteOrder, BigEndian};
 
 use protobuf_iter::*;
-use blob::Blob;
+use crate::blob::Blob;
 
 
 pub struct BlobReader<R> {
