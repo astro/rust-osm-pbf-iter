@@ -14,7 +14,6 @@ lto = true
 opt-level = 3
 
 [dependencies]
-byteorder = "1"
 libdeflater = "1"
 num_cpus = "1"
 protobuf_iter = ">= 0.1.2"
