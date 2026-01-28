@@ -1,6 +1,5 @@
 use std::str::from_utf8;
 use std::io::Read;
-use byteorder::{ByteOrder, BigEndian};
 
 use protobuf_iter::*;
 use crate::blob::Blob;
@@ -29,7 +28,7 @@ impl<R: Read> BlobReader<R> {
         let mut len_buf = [0; 4];
         match read.read(&mut len_buf) {
             Ok(4) => {
-                let len = BigEndian::read_u32(&len_buf) as usize;
+                let len = u32::from_be_bytes(len_buf) as usize;
                 let mut header_buf = Vec::with_capacity(len);
                 unsafe { header_buf.set_len(len); }
                 match read.read_exact(&mut header_buf) {
