@@ -6,7 +6,7 @@ license = "GPL-3.0"
 description = "Parse OpenStreetMap .pbf dumps while trying to avoid copying"
 documentation = "https://docs.rs/osm_pbf_iter/"
 repository = "https://github.com/astro/rust-osm-pbf-iter/"
-edition = "2021"
+edition = "2024"
 
 [profile.release]
 debug = true
