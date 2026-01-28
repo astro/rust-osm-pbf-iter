@@ -36,7 +36,7 @@ fn blobs_worker(req_rx: Receiver<Blob>, res_tx: SyncSender<Stats>) {
 }
 
 fn main() {
-    let cpus = num_cpus::get();
+    let cpus: usize = thread::available_parallelism().unwrap().into();
 
     for arg in args().skip(1) {
         let mut workers = Vec::with_capacity(cpus);
