@@ -1,9 +1,8 @@
-use libdeflater::{Decompressor, DecompressionError};
-
+use libdeflater::{DecompressionError, Decompressor};
 
 pub enum Blob {
     Raw(Vec<u8>),
-    Zlib(Vec<u8>)
+    Zlib(Vec<u8>),
 }
 
 impl Blob {
@@ -20,12 +19,10 @@ impl Blob {
                         Ok(len) => {
                             assert!(len <= decompressed.len());
                             decompressed.resize(len, 0);
-                            return decompressed
+                            return decompressed;
                         }
-                        Err(DecompressionError::InsufficientSpace) =>
-                            expected_len *= 2,
-                        Err(DecompressionError::BadData) =>
-                            panic!("Bad zlib data"),
+                        Err(DecompressionError::InsufficientSpace) => expected_len *= 2,
+                        Err(DecompressionError::BadData) => panic!("Bad zlib data"),
                     }
                 }
             }

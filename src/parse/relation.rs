@@ -1,13 +1,8 @@
+use protobuf_iter::*;
 use std::fmt;
 use std::hash::{Hash, Hasher};
-use protobuf_iter::*;
 
-use crate::{
-    delta::DeltaEncodedIter,
-    primitive_block::PrimitiveBlock,
-    info::Info,
-    tags::TagsIter,
-};
+use crate::{delta::DeltaEncodedIter, info::Info, primitive_block::PrimitiveBlock, tags::TagsIter};
 
 #[derive(Debug, Clone)]
 pub struct Relation<'a> {
@@ -26,8 +21,7 @@ impl<'a> Hash for Relation<'a> {
     }
 }
 
-impl<'a> Eq for Relation<'a> {
-}
+impl<'a> Eq for Relation<'a> {}
 impl<'a> PartialEq for Relation<'a> {
     fn eq(&self, other: &Self) -> bool {
         self.id == other.id
@@ -57,11 +51,10 @@ impl<'a> Iterator for RelationMembersIter<'a> {
         let role = if role_sid < self.stringtable.len() {
             self.stringtable[role_sid]
         } else {
-            return None
+            return None;
         };
 
-        let memid = self.memids.next()?
-            .try_into().ok()?;
+        let memid = self.memids.next()?.try_into().ok()?;
 
         let memtype = match self.types.next() {
             Some(0) => RelationMemberType::Node,
@@ -88,9 +81,6 @@ impl<'a> fmt::Debug for RelationMembersIter<'a> {
     }
 }
 
-
-
-
 impl<'a> Relation<'a> {
     pub fn parse(primitive_block: &'a PrimitiveBlock<'a>, data: &'a [u8]) -> Self {
         let iter = MessageIter::new(data);
@@ -109,21 +99,14 @@ impl<'a> Relation<'a> {
 
         for m in iter.clone() {
             match m.tag {
-                1 =>
-                    relation.id = Into::into(m.value),
-                2 =>
-                    relation.tags_iter.set_keys(*m.value),
-                3 =>
-                    relation.tags_iter.set_values(*m.value),
-                4 =>
-                    relation.info = Some(Info::parse(&primitive_block.stringtable, *m.value)),
-                8 =>
-                    relation.rels_iter.roles_sid = PackedIter::new(*m.value),
-                9 =>
-                    relation.rels_iter.memids = DeltaEncodedIter::new(m.value),
-                10 =>
-                    relation.rels_iter.types = PackedIter::new(*m.value),
-                _ => ()
+                1 => relation.id = Into::into(m.value),
+                2 => relation.tags_iter.set_keys(*m.value),
+                3 => relation.tags_iter.set_values(*m.value),
+                4 => relation.info = Some(Info::parse(&primitive_block.stringtable, *m.value)),
+                8 => relation.rels_iter.roles_sid = PackedIter::new(*m.value),
+                9 => relation.rels_iter.memids = DeltaEncodedIter::new(m.value),
+                10 => relation.rels_iter.types = PackedIter::new(*m.value),
+                _ => (),
             }
         }
 

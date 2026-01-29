@@ -21,19 +21,22 @@ fn main() {
                     Primitive::Node(node) => {
                         stats[0] += 1;
                         println!("{:?}", node);
-                    },
+                    }
                     Primitive::Way(way) => {
                         stats[1] += 1;
                         println!("{:?}", way);
-                    },
+                    }
                     Primitive::Relation(relation) => {
                         stats[2] += 1;
                         println!("{:?}", relation);
-                    },
+                    }
                 }
             }
         }
 
-        println!("{} - {} nodes, {} ways, {} relations", arg, stats[0], stats[1], stats[2]);
+        println!(
+            "{} - {} nodes, {} ways, {} relations",
+            arg, stats[0], stats[1], stats[2]
+        );
     }
 }

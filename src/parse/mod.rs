@@ -1,13 +1,13 @@
 pub mod primitive_block;
-pub use self::primitive_block::{PrimitiveBlock, Primitive};
+pub use self::primitive_block::{Primitive, PrimitiveBlock};
 pub mod node;
 pub use self::node::Node;
 pub mod way;
 pub use self::way::Way;
 pub mod relation;
 pub use self::relation::{Relation, RelationMemberType};
+pub mod dense_nodes;
 pub mod info;
 pub mod tags;
-pub mod dense_nodes;
 pub use self::dense_nodes::DenseNodesParser;
 pub mod dense_info;

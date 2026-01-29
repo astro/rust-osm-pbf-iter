@@ -1,8 +1,8 @@
-use std::hash::{Hash, Hasher};
 use protobuf_iter::*;
+use std::hash::{Hash, Hasher};
 
-use super::primitive_block::PrimitiveBlock;
 use super::info::Info;
+use super::primitive_block::PrimitiveBlock;
 use super::tags::TagsIter;
 
 #[derive(Debug, Clone)]
@@ -25,23 +25,13 @@ impl<'a> Node<'a> {
         let iter = MessageIter::new(data);
         for m in iter.clone() {
             match m.tag {
-                1 =>
-                    id = Into::<i64>::into(m.value) as u64,
-                2 =>
-                    tags_iter.set_keys(*m.value),
-                3 =>
-                    tags_iter.set_values(*m.value),
-                4 =>
-                    info = Some(Info::parse(&primitive_block.stringtable, *m.value)),
-                8 =>
-                    lat = primitive_block.convert_lat(
-                        Into::<i64>::into(m.value)
-                    ),
-                9 =>
-                    lon = primitive_block.convert_lon(
-                        Into::<i64>::into(m.value)
-                    ),
-                _ => ()
+                1 => id = Into::<i64>::into(m.value) as u64,
+                2 => tags_iter.set_keys(*m.value),
+                3 => tags_iter.set_values(*m.value),
+                4 => info = Some(Info::parse(&primitive_block.stringtable, *m.value)),
+                8 => lat = primitive_block.convert_lat(Into::<i64>::into(m.value)),
+                9 => lon = primitive_block.convert_lon(Into::<i64>::into(m.value)),
+                _ => (),
             }
         }
 
