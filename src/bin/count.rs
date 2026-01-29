@@ -1,9 +1,9 @@
 use std::env::args;
 use std::fs::File;
-use std::io::{Seek, SeekFrom, BufReader};
-use std::time::Instant;
-use std::sync::mpsc::{sync_channel, SyncSender, Receiver};
+use std::io::{BufReader, Seek, SeekFrom};
+use std::sync::mpsc::{Receiver, SyncSender, sync_channel};
 use std::thread;
+use std::time::Instant;
 
 use osm_pbf_iter::*;
 
@@ -22,12 +22,9 @@ fn blobs_worker(req_rx: Receiver<Blob>, res_tx: SyncSender<Stats>) {
         let primitive_block = PrimitiveBlock::parse(&data);
         for primitive in primitive_block.primitives() {
             match primitive {
-                Primitive::Node(_) =>
-                    stats[0] += 1,
-                Primitive::Way(_) =>
-                    stats[1] += 1,
-                Primitive::Relation(_) =>
-                    stats[2] += 1,
+                Primitive::Node(_) => stats[0] += 1,
+                Primitive::Way(_) => stats[1] += 1,
+                Primitive::Relation(_) => stats[2] += 1,
             }
         }
     }
@@ -78,12 +75,19 @@ fn main() {
         match f.seek(SeekFrom::Current(0)) {
             Ok(pos) => {
                 let rate = pos as f64 / 1024f64 / 1024f64 / duration;
-                println!("Processed {} MB in {:.2} seconds ({:.2} MB/s)",
-                         pos / 1024 / 1024, duration, rate);
-            },
+                println!(
+                    "Processed {} MB in {:.2} seconds ({:.2} MB/s)",
+                    pos / 1024 / 1024,
+                    duration,
+                    rate
+                );
+            }
             Err(_) => (),
         }
 
-        println!("{} - {} nodes, {} ways, {} relations", arg, stats[0], stats[1], stats[2]);
+        println!(
+            "{} - {} nodes, {} ways, {} relations",
+            arg, stats[0], stats[1], stats[2]
+        );
     }
 }

@@ -1,12 +1,7 @@
-use std::hash::{Hash, Hasher};
 use protobuf_iter::*;
+use std::hash::{Hash, Hasher};
 
-use crate::{
-    delta::DeltaEncodedIter,
-    primitive_block::PrimitiveBlock,
-    info::Info,
-    tags::TagsIter,
-};
+use crate::{delta::DeltaEncodedIter, info::Info, primitive_block::PrimitiveBlock, tags::TagsIter};
 
 #[derive(Debug, Clone)]
 pub struct Way<'a> {
@@ -28,17 +23,12 @@ impl<'a> Way<'a> {
         let iter = MessageIter::new(data);
         for m in iter.clone() {
             match m.tag {
-                1 =>
-                    way.id = Into::into(m.value),
-                2 =>
-                    way.tags_iter.set_keys(*m.value),
-                3 =>
-                    way.tags_iter.set_values(*m.value),
-                4 =>
-                    way.info = Some(Info::parse(&primitive_block.stringtable, *m.value)),
-                8 =>
-                    way.refs_iter = DeltaEncodedIter::new(m.value),
-                _ => ()
+                1 => way.id = Into::into(m.value),
+                2 => way.tags_iter.set_keys(*m.value),
+                3 => way.tags_iter.set_values(*m.value),
+                4 => way.info = Some(Info::parse(&primitive_block.stringtable, *m.value)),
+                8 => way.refs_iter = DeltaEncodedIter::new(m.value),
+                _ => (),
             }
         }
 

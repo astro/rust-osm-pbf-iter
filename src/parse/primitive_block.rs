@@ -1,10 +1,10 @@
-use std::str::from_utf8_unchecked;
 use protobuf_iter::*;
+use std::str::from_utf8_unchecked;
 
-use super::node::Node;
-use super::way::Way;
-use super::relation::Relation;
 use super::dense_nodes::DenseNodesParser;
+use super::node::Node;
+use super::relation::Relation;
+use super::way::Way;
 
 const NANO: f64 = 1.0e-9;
 
@@ -43,7 +43,7 @@ impl<'a> PrimitiveBlock<'a> {
                 19 => result.lat_offset = Into::<i64>::into(m.value),
                 20 => result.lon_offset = Into::<i64>::into(m.value),
                 18 => result.date_granularity = Into::<u64>::into(m.value),
-                _ => ()
+                _ => (),
             }
         }
         // println!("[PrimitiveBlock] granularity: {:?} lat_offset: {:?} lon_offset: {:?}", result.granularity, result.lat_offset, result.lon_offset);
@@ -103,52 +103,51 @@ impl<'a> Iterator for PrimitivesIterator<'a> {
                                 self.primitive_group = Some(From::from(primitive_group));
                                 // start parsing primitive_group
                                 self.next()
-                            },
-                            // All done
-                            None => return None
-                        }
-                    },
-                    Some(mut primitive_group) =>
-                        primitive_group.next()
-                        .and_then(|m| {
-                            // Put back in for the next call to `next()`
-                            self.primitive_group = Some(primitive_group);
-
-                            match m.tag {
-                                // node
-                                1 => {
-                                    let node = Node::parse(self.primitive_block, *m.value);
-                                    Some(Primitive::Node(node))
-                                },
-                                // dense_nodes
-                                2 => {
-                                    self.dense_nodes = DenseNodesParser::new(self.primitive_block, *m.value);
-                                    // start parsing dense_nodes:
-                                    self.next()
-                                },
-                                // way
-                                3 => {
-                                    let way = Way::parse(self.primitive_block, *m.value);
-                                    Some(Primitive::Way(way))
-                                },
-                                // relation
-                                4 => {
-                                    let relation = Relation::parse(self.primitive_block, *m.value);
-                                    Some(Primitive::Relation(relation))
-                                },
-                                // skip
-                                _ => self.next()
                             }
-                        })
+                            // All done
+                            None => return None,
+                        }
+                    }
+                    Some(mut primitive_group) => primitive_group.next().and_then(|m| {
+                        // Put back in for the next call to `next()`
+                        self.primitive_group = Some(primitive_group);
+
+                        match m.tag {
+                            // node
+                            1 => {
+                                let node = Node::parse(self.primitive_block, *m.value);
+                                Some(Primitive::Node(node))
+                            }
+                            // dense_nodes
+                            2 => {
+                                self.dense_nodes =
+                                    DenseNodesParser::new(self.primitive_block, *m.value);
+                                // start parsing dense_nodes:
+                                self.next()
+                            }
+                            // way
+                            3 => {
+                                let way = Way::parse(self.primitive_block, *m.value);
+                                Some(Primitive::Way(way))
+                            }
+                            // relation
+                            4 => {
+                                let relation = Relation::parse(self.primitive_block, *m.value);
+                                Some(Primitive::Relation(relation))
+                            }
+                            // skip
+                            _ => self.next(),
+                        }
+                    }),
                 }
-            },
+            }
             Some(mut dense_nodes) => {
                 match dense_nodes.next() {
                     None => {
                         // dense_nodes have been processed, no need to
                         // put back.  proceed:
                         self.next()
-                    },
+                    }
                     Some(dense_node) => {
                         // Put back in for the next call to `next()`
                         self.dense_nodes = Some(dense_nodes);

@@ -26,22 +26,18 @@ impl<'a> Info<'a> {
         let iter = MessageIter::new(data);
         for m in iter {
             match m.tag {
-                1 =>
-                    info.version = Some(m.value.into()),
-                2 =>
-                    info.timestamp = Some(m.value.into()),
-                3 =>
-                    info.changeset = Some(m.value.into()),
-                4 =>
-                    info.uid = Some(m.value.into()),
+                1 => info.version = Some(m.value.into()),
+                2 => info.timestamp = Some(m.value.into()),
+                3 => info.changeset = Some(m.value.into()),
+                4 => info.uid = Some(m.value.into()),
                 5 => {
                     let user_sid: u32 = m.value.into();
                     info.user = Some(&stringtable[user_sid as usize]);
-                },
+                }
                 6 => {
                     let visible: u32 = m.value.into();
                     info.visible = Some(visible != 0);
-                },
+                }
                 _ => (),
             }
         }

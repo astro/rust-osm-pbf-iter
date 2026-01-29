@@ -1,5 +1,5 @@
-use std::fmt;
 use protobuf_iter::*;
+use std::fmt;
 
 #[derive(Clone)]
 pub struct TagsIter<'a> {
@@ -30,22 +30,22 @@ impl<'a> Iterator for TagsIter<'a> {
     type Item = (&'a str, &'a str);
 
     fn next(&mut self) -> Option<Self::Item> {
-        let obtain = |opt_iter: &mut Option<PackedIter<'a, PackedVarint, u32>>|
-            opt_iter.as_mut().and_then(|iter| iter.next());
+        let obtain = |opt_iter: &mut Option<PackedIter<'a, PackedVarint, u32>>| {
+            opt_iter.as_mut().and_then(|iter| iter.next())
+        };
         match (obtain(&mut self.keys), obtain(&mut self.values)) {
             (Some(key_index), Some(val_index)) => {
                 let key_index = key_index as usize;
                 let val_index = val_index as usize;
-                if key_index < self.stringtable.len() &&
-                    val_index < self.stringtable.len() {
-                        let key = self.stringtable[key_index];
-                        let val = self.stringtable[val_index];
-                        Some((key, val))
-                    } else {
-                        None
-                    }
-            },
-            _ => None
+                if key_index < self.stringtable.len() && val_index < self.stringtable.len() {
+                    let key = self.stringtable[key_index];
+                    let val = self.stringtable[val_index];
+                    Some((key, val))
+                } else {
+                    None
+                }
+            }
+            _ => None,
         }
     }
 }
