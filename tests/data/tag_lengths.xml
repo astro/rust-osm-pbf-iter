@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm generator="integration_test" upload="false">
+  <node id="1" version="1" timestamp="2013-01-01T00:00:00Z" changeset="1" uid="1" user="test" lat="1.1000000" lon="1.1000000"/>
+  <node id="2" version="1" timestamp="2013-01-01T00:00:00Z" changeset="1" uid="1" user="test" lat="1.1000000" lon="1.1000000"/>
+  <node id="3" version="1" timestamp="2013-01-01T00:00:00Z" changeset="1" uid="1" user="test" lat="1.1000000" lon="1.1000000">
+    <tag k="highway" v="residential"/>
+    <tag k="source" v="testdata"/>
+  </node>
+  <node id="4" version="1" timestamp="2013-01-01T00:00:00Z" changeset="1" uid="1" user="test" lat="1.1000000" lon="1.1000000">
+    <tag k="foo" v=""/>
+    <tag k="" v="bar"/>
+  </node>
+  <node id="5" version="1" timestamp="2013-01-01T00:00:00Z" changeset="1" uid="1" user="test" lat="1.1000000" lon="1.1000000">
+    <tag k="" v=""/>
+  </node>
+</osm>

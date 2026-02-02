@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm generator="integration_test" upload="false">
+  <node id="5816" version="1" timestamp="2009-11-25T21:59:13Z" changeset="1" uid="1" user="fred" lat="12.0000000" lon="-108.0000000"/>
+  <node id="5822" version="1" timestamp="2009-11-25T21:59:13Z" changeset="1" uid="1" user="fred" lat="18.0000000" lon="-108.0000000"/>
+  <node id="6362" version="1" timestamp="2009-11-25T21:59:13Z" changeset="1" uid="1" user="fred" lat="18.0000000" lon="-102.0000000"/>
+  <node id="6356" version="1" timestamp="2009-11-25T21:59:13Z" changeset="1" uid="1" user="fred" lat="12.0000000" lon="-102.0000000"/>
+  <way id="9772" version="1" timestamp="1970-01-15T13:46:26Z" changeset="1" uid="1" user="fred">
+    <nd ref="5822"/>
+    <nd ref="6362"/>
+    <nd ref="6356"/>
+    <nd ref="5816"/>
+    <nd ref="5822"/>
+    <tag k="testcase" v="4800"/>
+  </way>
+  <way id="9774" version="1" timestamp="1970-01-15T13:46:26Z" changeset="1" uid="1" user="fred">
+    <nd ref="6271"/>
+    <nd ref="6091"/>
+    <nd ref="6090"/>
+    <nd ref="6180"/>
+    <nd ref="6178"/>
+    <nd ref="6088"/>
+    <nd ref="6087"/>
+    <nd ref="6267"/>
+    <nd ref="6271"/>
+    <tag k="testcase" v="4800"/>
+  </way>
+  <relation id="9775">
+    <member type="way" ref="9772" role="outer"/>
+    <member type="way" ref="9774" role="inner"/>
+    <tag k="type" v="multipolygon"/>
+  </relation>
+</osm>
