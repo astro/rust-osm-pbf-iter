@@ -32,7 +32,7 @@ impl<'a> Info<'a> {
                 4 => info.uid = Some(m.value.into()),
                 5 => {
                     let user_sid: u32 = m.value.into();
-                    info.user = Some(&stringtable[user_sid as usize]);
+                    info.user = Some(stringtable[user_sid as usize]);
                 }
                 6 => {
                     let visible: u32 = m.value.into();

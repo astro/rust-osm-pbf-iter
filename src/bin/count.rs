@@ -1,6 +1,6 @@
 use std::env::args;
 use std::fs::File;
-use std::io::{BufReader, Seek, SeekFrom};
+use std::io::{BufReader, Seek};
 use std::sync::mpsc::{Receiver, SyncSender, sync_channel};
 use std::thread;
 use std::time::Instant;
@@ -12,12 +12,7 @@ type Stats = [u64; 3];
 fn blobs_worker(req_rx: Receiver<Blob>, res_tx: SyncSender<Stats>) {
     let mut stats = [0; 3];
 
-    loop {
-        let blob = match req_rx.recv() {
-            Ok(blob) => blob,
-            Err(_) => break,
-        };
-
+    while let Ok(blob) = req_rx.recv() {
         let data = blob.into_data();
         let primitive_block = PrimitiveBlock::parse(&data);
         for primitive in primitive_block.primitives() {
@@ -72,18 +67,15 @@ fn main() {
         let duration = stop.duration_since(start);
         let duration = duration.as_secs() as f64 + (duration.subsec_nanos() as f64 / 1e9);
         let mut f = reader.into_inner();
-        match f.seek(SeekFrom::Current(0)) {
-            Ok(pos) => {
-                let rate = pos as f64 / 1024f64 / 1024f64 / duration;
-                println!(
-                    "Processed {} MB in {:.2} seconds ({:.2} MB/s)",
-                    pos / 1024 / 1024,
-                    duration,
-                    rate
-                );
-            }
-            Err(_) => (),
-        }
+        if let Ok(pos) = f.stream_position() {
+            let rate = pos as f64 / 1024f64 / 1024f64 / duration;
+            println!(
+                "Processed {} MB in {:.2} seconds ({:.2} MB/s)",
+                pos / 1024 / 1024,
+                duration,
+                rate
+            );
+        };
 
         println!(
             "{} - {} nodes, {} ways, {} relations",

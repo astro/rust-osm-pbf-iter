@@ -12,9 +12,8 @@ impl Blob {
             Blob::Zlib(compressed) => {
                 let mut decompressor = Decompressor::new();
                 let mut expected_len = 4 * compressed.len();
-                let mut decompressed = Vec::with_capacity(expected_len);
                 loop {
-                    decompressed.resize(expected_len, 0);
+                    let mut decompressed = vec![0; expected_len];
                     match decompressor.zlib_decompress(&compressed[..], &mut decompressed[..]) {
                         Ok(len) => {
                             assert!(len <= decompressed.len());
