@@ -26,29 +26,10 @@ impl<R: Read> BlobReader<R> {
         match read.read(&mut len_buf) {
             Ok(4) => {
                 let len = u32::from_be_bytes(len_buf) as usize;
-                let mut header_buf = Vec::with_capacity(len);
-                unsafe {
-                    header_buf.set_len(len);
-                }
-                match read.read_exact(&mut header_buf) {
-                    Ok(()) => (),
-                    _ => return None,
-                };
-
-                let blob_header = match parse_blob_header(&header_buf) {
-                    Some(blob_header) => blob_header,
-                    None => return None,
-                };
+                let header_buf = Self::read_exact(read, len).ok()?;
+                let blob_header = parse_blob_header(&header_buf)?;
                 let datasize = blob_header.datasize as usize;
-                let mut blob_buf = Vec::with_capacity(datasize);
-                unsafe {
-                    blob_buf.set_len(datasize);
-                }
-                match read.read_exact(&mut blob_buf) {
-                    Ok(()) => (),
-                    _ => return None,
-                };
-
+                let blob_buf = Self::read_exact(read, datasize).ok()?;
                 if !blob_header.is_osm_data {
                     // retry next
                     Self::read_blob(read)
@@ -65,6 +46,17 @@ impl<R: Read> BlobReader<R> {
             }
             _ => None,
         }
+    }
+
+    fn read_exact(reader: &mut R, len: usize) -> std::io::Result<Vec<u8>> {
+        let mut buf = Vec::with_capacity(len);
+        // SAFETY: We read exactly `len` bytes.
+        unsafe {
+            let uninit_buf = std::slice::from_raw_parts_mut(buf.as_mut_ptr(), len);
+            reader.read_exact(uninit_buf)?;
+            buf.set_len(len);
+        };
+        Ok(buf)
     }
 }
 
