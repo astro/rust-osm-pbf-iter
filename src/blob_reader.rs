@@ -78,7 +78,7 @@ fn parse_blob_header(data: &[u8]) -> Option<BlobHeader> {
         is_osm_data: false,
         datasize: 0,
     };
-    for m in MessageIter::new(&data) {
+    for m in MessageIter::new(data) {
         match m.tag {
             // type
             1 => {
@@ -105,7 +105,7 @@ fn parse_blob_header(data: &[u8]) -> Option<BlobHeader> {
 }
 
 fn parse_blob(data: &[u8]) -> Option<Blob> {
-    for m in MessageIter::new(&data) {
+    for m in MessageIter::new(data) {
         match m.tag {
             // raw
             1 => return Some(Blob::Raw(Vec::from(m.value.get_data()))),

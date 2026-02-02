@@ -25,7 +25,7 @@ impl<'a> DenseInfoParser<'a> {
         let iter = MessageIter::new(data);
 
         Some(DenseInfoParser {
-            primitive_block: primitive_block,
+            primitive_block,
             versions: some!(iter.clone().tag::<ParseValue<'a>>(1).nth(0)).packed_varints(),
             timestamps: DeltaEncodedIter::new(some!(iter.clone().tag::<ParseValue<'a>>(2).nth(0))),
             changesets: DeltaEncodedIter::new(some!(iter.clone().tag::<ParseValue<'a>>(3).nth(0))),
@@ -45,7 +45,7 @@ impl<'a> Iterator for DenseInfoParser<'a> {
 
     fn next(&mut self) -> Option<Self::Item> {
         Some(Info {
-            version: self.versions.next().map(|version| version as u32),
+            version: self.versions.next(),
             timestamp: self
                 .timestamps
                 .next()

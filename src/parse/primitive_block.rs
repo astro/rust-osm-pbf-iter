@@ -29,7 +29,7 @@ impl<'a> PrimitiveBlock<'a> {
     pub fn parse(data: &'a [u8]) -> PrimitiveBlock<'a> {
         let mut result = PrimitiveBlock {
             stringtable: vec![],
-            iter: MessageIter::new(&data),
+            iter: MessageIter::new(data),
             granularity: 100,
             lat_offset: 0,
             lon_offset: 0,
@@ -76,8 +76,8 @@ impl<'a> PrimitiveBlock<'a> {
     }
 }
 
-fn parse_stringtable<'a>(data: &'a [u8]) -> Vec<&'a str> {
-    MessageIter::new(&data)
+fn parse_stringtable(data: &[u8]) -> Vec<&str> {
+    MessageIter::new(data)
         .tag(1)
         .map(|s| unsafe { from_utf8_unchecked(s) })
         .collect()
@@ -105,7 +105,7 @@ impl<'a> Iterator for PrimitivesIterator<'a> {
                                 self.next()
                             }
                             // All done
-                            None => return None,
+                            None => None,
                         }
                     }
                     Some(mut primitive_group) => primitive_group.next().and_then(|m| {

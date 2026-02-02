@@ -13,7 +13,7 @@ impl<'a> TagsIter<'a> {
         TagsIter {
             keys: None,
             values: None,
-            stringtable: stringtable,
+            stringtable,
         }
     }
 

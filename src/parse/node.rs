@@ -36,10 +36,10 @@ impl<'a> Node<'a> {
         }
 
         Node {
-            id: id,
-            lat: lat,
-            lon: lon,
-            info: info,
+            id,
+            lat,
+            lon,
+            info,
             tags: tags_iter.collect(),
         }
     }
