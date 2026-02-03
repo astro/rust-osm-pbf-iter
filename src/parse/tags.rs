@@ -63,3 +63,86 @@ impl<'a> fmt::Debug for TagsIter<'a> {
         Ok(())
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::TagsIter;
+
+    const STRINGTABLE: [&str; 4] = ["highway", "yes", "crossing", "lit"];
+
+    #[test]
+    fn test_normal() {
+        let mut iter = TagsIter::new(&STRINGTABLE);
+        iter.set_keys(&[0, 3]);
+        iter.set_values(&[2, 1]);
+        assert_eq!(
+            format!("{:?}", iter),
+            "{ highway=\"crossing\", lit=\"yes\" }"
+        );
+        assert_eq!(iter.next(), Some(("highway", "crossing")));
+        assert_eq!(iter.next(), Some(("lit", "yes")));
+        assert_eq!(iter.next(), None);
+    }
+
+    #[test]
+    fn test_no_keys() {
+        let mut iter = TagsIter::new(&STRINGTABLE);
+        iter.set_values(&[2, 1]);
+        assert_eq!(format!("{:?}", iter), "{ }");
+        assert_eq!(iter.next(), None);
+    }
+
+    #[test]
+    fn test_no_values() {
+        let mut iter = TagsIter::new(&STRINGTABLE);
+        iter.set_keys(&[0, 3]);
+        assert_eq!(format!("{:?}", iter), "{ }");
+        assert_eq!(iter.next(), None);
+    }
+
+    #[test]
+    fn test_no_keys_no_values() {
+        let mut iter = TagsIter::new(&STRINGTABLE);
+        assert_eq!(format!("{:?}", iter), "{ }");
+        assert_eq!(iter.next(), None);
+    }
+
+    #[test]
+    fn test_fewer_keys_than_values() {
+        let mut iter = TagsIter::new(&STRINGTABLE);
+        iter.set_keys(&[0]);
+        iter.set_values(&[2, 1]);
+        assert_eq!(format!("{:?}", iter), "{ highway=\"crossing\" }");
+        assert_eq!(iter.next(), Some(("highway", "crossing")));
+        assert_eq!(iter.next(), None);
+    }
+
+    #[test]
+    fn test_fewer_values_than_keys() {
+        let mut iter = TagsIter::new(&STRINGTABLE);
+        iter.set_keys(&[0, 3]);
+        iter.set_values(&[2]);
+        assert_eq!(format!("{:?}", iter), "{ highway=\"crossing\" }");
+        assert_eq!(iter.next(), Some(("highway", "crossing")));
+        assert_eq!(iter.next(), None);
+    }
+
+    #[test]
+    fn test_key_overflows_stringtable() {
+        let mut iter = TagsIter::new(&STRINGTABLE);
+        iter.set_keys(&[4, 3]);
+        iter.set_values(&[2, 1]);
+        assert_eq!(format!("{:?}", iter), "{ }");
+        assert_eq!(iter.next(), None);
+    }
+
+    #[test]
+    fn test_value_overflows_stringtable() {
+        let mut iter = TagsIter::new(&STRINGTABLE);
+        iter.set_keys(&[0, 3]);
+        iter.set_values(&[2, 210]);
+        assert_eq!(format!("{:?}", iter), "{ highway=\"crossing\" }");
+        assert_eq!(iter.next(), Some(("highway", "crossing")));
+        assert_eq!(iter.next(), None);
+    }
+}

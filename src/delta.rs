@@ -51,3 +51,29 @@ impl<
         self.clone().collect::<Vec<T>>().fmt(f)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::DeltaEncodedIter;
+    use protobuf_iter::{PackedVarint, ParseValue};
+
+    #[test]
+    fn test_normal() {
+        let mut iter: DeltaEncodedIter<PackedVarint, i64> =
+            DeltaEncodedIter::new(ParseValue::LengthDelimited(&[0, 1, 6, 3]));
+        assert_eq!(format!("{:?}", iter), "[0, -1, 2, 0]");
+        assert_eq!(iter.next(), Some(0));
+        assert_eq!(iter.next(), Some(-1));
+        assert_eq!(iter.next(), Some(2));
+        assert_eq!(iter.next(), Some(0));
+        assert_eq!(iter.next(), None);
+    }
+
+    #[test]
+    fn test_empty() {
+        let mut iter: DeltaEncodedIter<PackedVarint, i64> =
+            DeltaEncodedIter::new(ParseValue::LengthDelimited(&[]));
+        assert_eq!(format!("{:?}", iter), "[]");
+        assert_eq!(iter.next(), None);
+    }
+}
