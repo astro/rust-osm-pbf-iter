@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm generator="integration_test" upload="false">
+  <node id="11" lat="4.5000000" lon="8.5000000"/>
+</osm>

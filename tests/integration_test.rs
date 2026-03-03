@@ -30,6 +30,24 @@ mod tests {
         );
     }
 
+    #[test]
+    fn test_two_primitive_groups() {
+        // The test file contains a single uncompressed OSMData blob
+        // with two PrimitiveGroups. The first group consists of node 11,
+        // the second group consists of nodes 21 and 22.
+        //
+        // TODO: At the moment, the implementation fails to process
+        // the second PrimitiveGroup, so we get only the single node 11
+        // in the result for this test. This is wrong, and we should fix
+        // the implementation to find the primitives in all PrimitiveGroups.
+        //
+        // https://github.com/astro/rust-osm-pbf-iter/issues/10
+        assert_eq!(
+            dump(new_blob_reader("two_primitive_groups.osm.pbf")),
+            read_to_string(test_data_path("two_primitive_groups.xml")).unwrap()
+        );
+    }
+
     fn new_blob_reader(filename: &str) -> BlobReader<BufReader<File>> {
         let path = test_data_path(filename);
         let file = File::open(&path).expect(&format!("cannot open {:?}", path));
