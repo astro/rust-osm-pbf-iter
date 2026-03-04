@@ -94,68 +94,54 @@ impl<'a> Iterator for PrimitivesIterator<'a> {
     type Item = Primitive<'a>;
 
     fn next(&mut self) -> Option<Primitive<'a>> {
-        match self.dense_nodes.take() {
-            None => {
-                match self.primitive_group.take() {
-                    None => {
-                        match self.primitive_groups.next() {
-                            Some(primitive_group) => {
-                                self.primitive_group = Some(From::from(primitive_group));
-                                // start parsing primitive_group
-                                self.next()
-                            }
-                            // All done
-                            None => None,
-                        }
-                    }
-                    Some(mut primitive_group) => primitive_group.next().and_then(|m| {
-                        // Put back in for the next call to `next()`
-                        self.primitive_group = Some(primitive_group);
-
-                        match m.tag {
-                            // node
-                            1 => {
-                                let node = Node::parse(self.primitive_block, *m.value);
-                                Some(Primitive::Node(node))
-                            }
-                            // dense_nodes
-                            2 => {
-                                self.dense_nodes =
-                                    DenseNodesParser::new(self.primitive_block, *m.value);
-                                // start parsing dense_nodes:
-                                self.next()
-                            }
-                            // way
-                            3 => {
-                                let way = Way::parse(self.primitive_block, *m.value);
-                                Some(Primitive::Way(way))
-                            }
-                            // relation
-                            4 => {
-                                let relation = Relation::parse(self.primitive_block, *m.value);
-                                Some(Primitive::Relation(relation))
-                            }
-                            // skip
-                            _ => self.next(),
-                        }
-                    }),
-                }
+        // Try to yield a Primitive::Node from dense_nodes.
+        if let Some(dense_nodes) = &mut self.dense_nodes {
+            if let Some(node) = dense_nodes.next() {
+                return Some(Primitive::Node(node));
             }
-            Some(mut dense_nodes) => {
-                match dense_nodes.next() {
-                    None => {
-                        // dense_nodes have been processed, no need to
-                        // put back.  proceed:
-                        self.next()
-                    }
-                    Some(dense_node) => {
-                        // Put back in for the next call to `next()`
-                        self.dense_nodes = Some(dense_nodes);
-
-                        Some(Primitive::Node(dense_node))
-                    }
-                }
-            }
+            self.dense_nodes = None; // iterator exhausted
         }
+
+        // Try to yield a Primitive from the current primitive_group.
+        if let Some(group) = &mut self.primitive_group {
+            for m in group.by_ref() {
+                match m.tag {
+                    // node
+                    1 => {
+                        let node = Node::parse(self.primitive_block, *m.value);
+                        return Some(Primitive::Node(node));
+                    }
+
+                    // dense_nodes
+                    2 => {
+                        self.dense_nodes = DenseNodesParser::new(self.primitive_block, *m.value);
+                        return self.next(); // start parsing dense_nodes
+                    }
+
+                    // way
+                    3 => {
+                        let way = Way::parse(self.primitive_block, *m.value);
+                        return Some(Primitive::Way(way));
+                    }
+
+                    // relation
+                    4 => {
+                        let relation = Relation::parse(self.primitive_block, *m.value);
+                        return Some(Primitive::Relation(relation));
+                    }
+
+                    _ => continue,
+                }
+            }
+            self.primitive_group = None; // iterator exhausted
+        }
+
+        // Try to yield something from the next primitive group.
+        if let Some(group) = self.primitive_groups.next() {
+            self.primitive_group = Some(MessageIter::from(group));
+            return self.next(); // start parsing primitive_group
+        }
+
+        None
     }
 }
