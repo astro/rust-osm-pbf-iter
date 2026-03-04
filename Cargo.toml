@@ -1,8 +1,8 @@
 [package]
 name = "osm_pbf_iter"
-version = "0.2.1"
-authors = ["Astro <astro@spaceboyz.net>"]
-license = "GPL-3.0"
+version = "0.2.2"
+authors = ["Astro <astro@spaceboyz.net>", "Sascha Brawer <sascha@brawer.ch>"]
+license = "MIT"
 description = "Parse OpenStreetMap .pbf dumps while trying to avoid copying"
 documentation = "https://docs.rs/osm_pbf_iter/"
 repository = "https://github.com/astro/rust-osm-pbf-iter/"
