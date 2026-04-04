@@ -29,7 +29,7 @@ jobs:
     - name: Install Rust LLVM tools preview
       run: rustup component add llvm-tools-preview
     - name: Install Rust coverage tool
-      uses: taiki-e/install-action@06203676c62f0d3c765be3f2fcfbebbcb02d09f5 # v2.69.6
+      uses: taiki-e/install-action@de6f06126afb86b5250a16ff961c57360c5edccc # v2.72.0
       with:
         tool: cargo-llvm-cov
     - name: Fetch Rust dependencies
