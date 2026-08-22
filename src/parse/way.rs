@@ -26,7 +26,13 @@ impl<'a> Way<'a> {
                 1 => way.id = Into::into(m.value),
                 2 => way.tags_iter.set_keys(*m.value),
                 3 => way.tags_iter.set_values(*m.value),
-                4 => way.info = Some(Info::parse(&primitive_block.stringtable, *m.value)),
+                4 => {
+                    way.info = Some(Info::parse(
+                        &primitive_block.stringtable,
+                        primitive_block.date_granularity,
+                        *m.value,
+                    ))
+                }
                 8 => way.refs_iter = DeltaEncodedIter::new(m.value),
                 _ => (),
             }
