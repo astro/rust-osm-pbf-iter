@@ -28,7 +28,13 @@ impl<'a> Node<'a> {
                 1 => id = Into::<i64>::into(m.value) as u64,
                 2 => tags_iter.set_keys(*m.value),
                 3 => tags_iter.set_values(*m.value),
-                4 => info = Some(Info::parse(&primitive_block.stringtable, *m.value)),
+                4 => {
+                    info = Some(Info::parse(
+                        &primitive_block.stringtable,
+                        primitive_block.date_granularity,
+                        *m.value,
+                    ))
+                }
                 8 => lat = primitive_block.convert_lat(Into::<i64>::into(m.value)),
                 9 => lon = primitive_block.convert_lon(Into::<i64>::into(m.value)),
                 _ => (),

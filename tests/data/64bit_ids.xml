@@ -1823,7 +1823,7 @@
   <node id="4294968189" version="1" timestamp="2012-02-20T23:43:34Z" changeset="10746315" uid="28756" user="Nescum" lat="17.1407982" lon="-61.7806718"/>
   <node id="4294968190" version="1" timestamp="2012-02-20T23:43:34Z" changeset="10746315" uid="28756" user="Nescum" lat="17.1408081" lon="-61.7776256"/>
   <node id="4294968191" version="1" timestamp="2012-02-20T23:43:34Z" changeset="10746315" uid="28756" user="Nescum" lat="17.1424984" lon="-61.7754990"/>
-  <way id="1" version="10" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1" version="10" timestamp="2009-06-06T04:31:31Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="17"/>
     <nd ref="4294967326"/>
     <nd ref="4294967327"/>
@@ -1832,7 +1832,7 @@
     <tag k="highway" v="service"/>
     <tag k="service" v="parking_aisle"/>
   </way>
-  <way id="2" version="2" timestamp="1970-01-14T21:06:57Z" changeset="505049" uid="4946" user="user_4946">
+  <way id="2" version="2" timestamp="2008-01-01T19:58:22Z" changeset="505049" uid="4946" user="user_4946">
     <nd ref="4294967328"/>
     <nd ref="4294967329"/>
     <nd ref="4294967330"/>
@@ -1844,7 +1844,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="3" version="27" timestamp="1970-01-16T06:46:54Z" changeset="9738559" uid="446351" user="Da_Iceman">
+  <way id="3" version="27" timestamp="2011-11-04T13:44:12Z" changeset="9738559" uid="446351" user="Da_Iceman">
     <nd ref="43"/>
     <nd ref="4294967333"/>
     <nd ref="183"/>
@@ -1934,7 +1934,7 @@
     <nd ref="2"/>
     <tag k="highway" v="tertiary"/>
   </way>
-  <way id="4" version="10" timestamp="1970-01-15T17:47:28Z" changeset="4674825" uid="28756" user="Nescum">
+  <way id="4" version="10" timestamp="2010-05-12T07:20:08Z" changeset="4674825" uid="28756" user="Nescum">
     <nd ref="93"/>
     <nd ref="4294967372"/>
     <nd ref="86"/>
@@ -1960,14 +1960,14 @@
     <nd ref="92"/>
     <tag k="highway" v="tertiary"/>
   </way>
-  <way id="5" version="1" timestamp="1970-01-14T20:18:01Z" changeset="641003" uid="4946" user="user_4946">
+  <way id="5" version="1" timestamp="2007-11-28T20:25:45Z" changeset="641003" uid="4946" user="user_4946">
     <nd ref="93"/>
     <nd ref="94"/>
     <nd ref="4294967380"/>
     <tag k="created_by" v="Potlatch 0.5d"/>
     <tag k="highway" v="tertiary"/>
   </way>
-  <way id="6" version="6" timestamp="1970-01-15T17:47:28Z" changeset="4674825" uid="28756" user="Nescum">
+  <way id="6" version="6" timestamp="2010-05-12T07:20:09Z" changeset="4674825" uid="28756" user="Nescum">
     <nd ref="85"/>
     <nd ref="95"/>
     <nd ref="96"/>
@@ -1982,7 +1982,7 @@
     <nd ref="92"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="7" version="2" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="7" version="2" timestamp="2009-06-08T03:16:15Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="103"/>
     <nd ref="104"/>
     <nd ref="4294967385"/>
@@ -2013,20 +2013,20 @@
     <tag k="created_by" v="Potlatch 0.5d"/>
     <tag k="highway" v="tertiary"/>
   </way>
-  <way id="8" version="3" timestamp="1970-01-14T20:43:44Z" changeset="327182" uid="4946" user="user_4946">
+  <way id="8" version="3" timestamp="2007-12-16T17:07:37Z" changeset="327182" uid="4946" user="user_4946">
     <nd ref="4294967400"/>
     <nd ref="103"/>
     <tag k="created_by" v="Potlatch 0.5d"/>
     <tag k="highway" v="tertiary"/>
   </way>
-  <way id="9" version="7" timestamp="1970-01-14T21:11:27Z" changeset="541416" uid="4946" user="user_4946">
+  <way id="9" version="7" timestamp="2008-01-04T23:00:59Z" changeset="541416" uid="4946" user="user_4946">
     <nd ref="4294967401"/>
     <nd ref="114"/>
     <nd ref="4294967399"/>
     <tag k="created_by" v="Potlatch 0.6a"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="10" version="6" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="10" version="6" timestamp="2012-01-04T03:25:29Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="3"/>
     <nd ref="846"/>
     <nd ref="124"/>
@@ -2048,7 +2048,7 @@
     <nd ref="133"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="11" version="8" timestamp="1970-01-15T16:57:00Z" changeset="4351472" uid="28756" user="Nescum">
+  <way id="11" version="8" timestamp="2010-04-07T06:09:47Z" changeset="4351472" uid="28756" user="Nescum">
     <nd ref="176"/>
     <nd ref="146"/>
     <nd ref="147"/>
@@ -2059,7 +2059,7 @@
     <nd ref="4294967417"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="12" version="2" timestamp="1970-01-14T21:01:23Z" changeset="457884" uid="4946" user="user_4946">
+  <way id="12" version="2" timestamp="2007-12-28T23:14:02Z" changeset="457884" uid="4946" user="user_4946">
     <nd ref="4294967426"/>
     <nd ref="140"/>
     <nd ref="4294967424"/>
@@ -2067,20 +2067,20 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="13" version="4" timestamp="1970-01-16T12:56:49Z" changeset="12279657" uid="722137" user="OSMF Redaction Account">
+  <way id="13" version="4" timestamp="2012-07-18T11:10:10Z" changeset="12279657" uid="722137" user="OSMF Redaction Account">
     <nd ref="137"/>
     <nd ref="4294967427"/>
     <nd ref="4294967428"/>
     <nd ref="4294967429"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="14" version="2" timestamp="1970-01-15T09:43:32Z" changeset="1473791" uid="28756" user="Nescum">
+  <way id="14" version="2" timestamp="2009-06-10T05:48:46Z" changeset="1473791" uid="28756" user="Nescum">
     <nd ref="4294967430"/>
     <nd ref="4294967427"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="15" version="2" timestamp="1970-01-14T21:01:23Z" changeset="457884" uid="4946" user="user_4946">
+  <way id="15" version="2" timestamp="2007-12-28T23:16:18Z" changeset="457884" uid="4946" user="user_4946">
     <nd ref="4294967431"/>
     <nd ref="4294967432"/>
     <nd ref="149"/>
@@ -2094,14 +2094,14 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="tertiary"/>
   </way>
-  <way id="16" version="1" timestamp="1970-01-14T21:01:23Z" changeset="457884" uid="4946" user="user_4946">
+  <way id="16" version="1" timestamp="2007-12-28T23:13:29Z" changeset="457884" uid="4946" user="user_4946">
     <nd ref="4294967437"/>
     <nd ref="4294967438"/>
     <nd ref="157"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="17" version="4" timestamp="1970-01-15T16:57:00Z" changeset="4351472" uid="28756" user="Nescum">
+  <way id="17" version="4" timestamp="2010-04-07T06:08:45Z" changeset="4351472" uid="28756" user="Nescum">
     <nd ref="570"/>
     <nd ref="569"/>
     <nd ref="4294967448"/>
@@ -2110,7 +2110,7 @@
     <nd ref="4294967450"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="18" version="8" timestamp="1970-01-16T13:20:15Z" changeset="12600983" uid="21323" user="AE35">
+  <way id="18" version="8" timestamp="2012-08-03T17:33:43Z" changeset="12600983" uid="21323" user="AE35">
     <nd ref="4294967473"/>
     <nd ref="182"/>
     <nd ref="177"/>
@@ -2126,13 +2126,13 @@
     <tag k="highway" v="secondary"/>
     <tag k="name" v="Piggotts Main Road"/>
   </way>
-  <way id="19" version="3" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="19" version="3" timestamp="2009-06-08T03:16:17Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="4294967493"/>
     <nd ref="4294967513"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="20" version="4" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="20" version="4" timestamp="2009-06-08T03:16:20Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="4294967477"/>
     <nd ref="4294967917"/>
     <nd ref="4294967478"/>
@@ -2146,7 +2146,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="21" version="4" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="21" version="4" timestamp="2009-06-08T03:16:10Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="189"/>
     <nd ref="4294967483"/>
     <nd ref="190"/>
@@ -2157,7 +2157,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="22" version="2" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="22" version="2" timestamp="2009-06-08T03:16:12Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="194"/>
     <nd ref="4294967485"/>
     <nd ref="4294967486"/>
@@ -2167,7 +2167,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="23" version="4" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="23" version="4" timestamp="2009-06-08T03:16:26Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="195"/>
     <nd ref="194"/>
     <nd ref="189"/>
@@ -2178,27 +2178,27 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="24" version="2" timestamp="1970-01-15T22:01:40Z" changeset="6291234" uid="360370" user="markinldn">
+  <way id="24" version="2" timestamp="2010-11-04T19:59:18Z" changeset="6291234" uid="360370" user="markinldn">
     <nd ref="4294967496"/>
     <nd ref="206"/>
     <nd ref="4294967497"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="25" version="9" timestamp="1970-01-15T22:01:41Z" changeset="6291317" uid="360370" user="markinldn">
+  <way id="25" version="9" timestamp="2010-11-04T20:10:32Z" changeset="6291317" uid="360370" user="markinldn">
     <nd ref="207"/>
     <nd ref="4294967497"/>
     <nd ref="208"/>
     <nd ref="2"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="26" version="5" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="26" version="5" timestamp="2012-01-04T03:25:21Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="2"/>
     <nd ref="4294967696"/>
     <nd ref="3"/>
     <tag k="highway" v="primary"/>
     <tag k="name" v="Jabberwock Road"/>
   </way>
-  <way id="27" version="1" timestamp="1970-01-14T21:03:56Z" changeset="479524" uid="4946" user="user_4946">
+  <way id="27" version="1" timestamp="2007-12-30T17:33:29Z" changeset="479524" uid="4946" user="user_4946">
     <nd ref="209"/>
     <nd ref="210"/>
     <nd ref="4294967498"/>
@@ -2217,7 +2217,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="28" version="1" timestamp="1970-01-14T21:03:56Z" changeset="479524" uid="4946" user="user_4946">
+  <way id="28" version="1" timestamp="2007-12-30T17:34:03Z" changeset="479524" uid="4946" user="user_4946">
     <nd ref="4294967506"/>
     <nd ref="216"/>
     <nd ref="217"/>
@@ -2230,7 +2230,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="29" version="1" timestamp="1970-01-14T21:03:56Z" changeset="479524" uid="4946" user="user_4946">
+  <way id="29" version="1" timestamp="2007-12-30T17:34:16Z" changeset="479524" uid="4946" user="user_4946">
     <nd ref="4294967509"/>
     <nd ref="222"/>
     <nd ref="4294967510"/>
@@ -2241,7 +2241,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="30" version="5" timestamp="1970-01-16T02:20:48Z" changeset="8042442" uid="151524" user="DouglasANU">
+  <way id="30" version="5" timestamp="2011-05-03T18:51:31Z" changeset="8042442" uid="151524" user="DouglasANU">
     <nd ref="4294968018"/>
     <nd ref="4294968014"/>
     <nd ref="4294968016"/>
@@ -2253,7 +2253,7 @@
     <tag k="layer" v="-1"/>
     <tag k="railway" v="abandoned"/>
   </way>
-  <way id="31" version="5" timestamp="1970-01-16T09:23:01Z" changeset="10746315" uid="28756" user="Nescum">
+  <way id="31" version="5" timestamp="2012-02-20T23:43:37Z" changeset="10746315" uid="28756" user="Nescum">
     <nd ref="4294967515"/>
     <nd ref="4294968007"/>
     <nd ref="4294968012"/>
@@ -2263,7 +2263,7 @@
     <tag k="disused" v="yes"/>
     <tag k="ref" v="10-28"/>
   </way>
-  <way id="32" version="8" timestamp="1970-01-16T09:23:01Z" changeset="10746315" uid="28756" user="Nescum">
+  <way id="32" version="8" timestamp="2012-02-20T23:43:36Z" changeset="10746315" uid="28756" user="Nescum">
     <nd ref="4294967517"/>
     <nd ref="715"/>
     <nd ref="670"/>
@@ -2277,18 +2277,18 @@
     <tag k="surface" v="paved"/>
     <tag k="width" v="45"/>
   </way>
-  <way id="33" version="4" timestamp="1970-01-15T23:52:03Z" changeset="7029519" uid="383309" user="AtonX">
+  <way id="33" version="4" timestamp="2011-01-20T11:36:46Z" changeset="7029519" uid="383309" user="AtonX">
     <nd ref="4294967524"/>
     <nd ref="695"/>
     <tag k="aeroway" v="taxiway"/>
   </way>
-  <way id="34" version="7" timestamp="1970-01-15T23:52:03Z" changeset="7029519" uid="383309" user="AtonX">
+  <way id="34" version="7" timestamp="2011-01-20T11:36:45Z" changeset="7029519" uid="383309" user="AtonX">
     <nd ref="227"/>
     <nd ref="4294967525"/>
     <nd ref="4294968012"/>
     <tag k="aeroway" v="taxiway"/>
   </way>
-  <way id="35" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="35" version="3" timestamp="2009-06-06T04:30:40Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="4294967530"/>
     <nd ref="231"/>
     <nd ref="4294967531"/>
@@ -2299,14 +2299,14 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="36" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="36" version="3" timestamp="2009-06-06T04:30:38Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="234"/>
     <nd ref="4294967534"/>
     <nd ref="235"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="37" version="4" timestamp="1970-01-15T17:47:28Z" changeset="4674825" uid="28756" user="Nescum">
+  <way id="37" version="4" timestamp="2010-05-12T07:19:51Z" changeset="4674825" uid="28756" user="Nescum">
     <nd ref="4294967535"/>
     <nd ref="4294967536"/>
     <nd ref="236"/>
@@ -2321,14 +2321,14 @@
     <nd ref="4294967371"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="38" version="3" timestamp="1970-01-15T09:50:21Z" changeset="1520390" uid="28756" user="Nescum">
+  <way id="38" version="3" timestamp="2009-06-14T23:12:57Z" changeset="1520390" uid="28756" user="Nescum">
     <nd ref="4294967545"/>
     <nd ref="243"/>
     <nd ref="4294967546"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="39" version="2" timestamp="1970-01-14T21:09:37Z" changeset="526413" uid="4946" user="user_4946">
+  <way id="39" version="2" timestamp="2008-01-03T16:26:57Z" changeset="526413" uid="4946" user="user_4946">
     <nd ref="244"/>
     <nd ref="4294967547"/>
     <nd ref="245"/>
@@ -2339,14 +2339,14 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="40" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="40" version="3" timestamp="2009-06-06T04:31:52Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="4294967555"/>
     <nd ref="575"/>
     <nd ref="4294967557"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="41" version="4" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="41" version="4" timestamp="2009-06-06T04:31:57Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="259"/>
     <nd ref="4294967556"/>
     <nd ref="260"/>
@@ -2363,7 +2363,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="42" version="4" timestamp="1970-01-15T16:57:00Z" changeset="4351472" uid="28756" user="Nescum">
+  <way id="42" version="4" timestamp="2010-04-07T06:10:53Z" changeset="4351472" uid="28756" user="Nescum">
     <nd ref="262"/>
     <nd ref="576"/>
     <nd ref="4294967558"/>
@@ -2376,7 +2376,7 @@
     <nd ref="264"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="43" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="43" version="3" timestamp="2009-06-06T04:31:58Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="4294967561"/>
     <nd ref="268"/>
     <nd ref="4294967562"/>
@@ -2386,7 +2386,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="44" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="44" version="3" timestamp="2009-06-06T04:31:44Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="310"/>
     <nd ref="4294967615"/>
     <nd ref="311"/>
@@ -2396,7 +2396,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="45" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="45" version="3" timestamp="2009-06-06T04:31:49Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="4294967625"/>
     <nd ref="318"/>
     <nd ref="4294967626"/>
@@ -2404,7 +2404,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="46" version="2" timestamp="1970-01-14T21:09:38Z" changeset="526413" uid="4946" user="user_4946">
+  <way id="46" version="2" timestamp="2008-01-03T16:36:51Z" changeset="526413" uid="4946" user="user_4946">
     <nd ref="321"/>
     <nd ref="322"/>
     <nd ref="4294967628"/>
@@ -2420,7 +2420,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="47" version="2" timestamp="1970-01-14T21:09:38Z" changeset="526413" uid="4946" user="user_4946">
+  <way id="47" version="2" timestamp="2008-01-03T16:36:46Z" changeset="526413" uid="4946" user="user_4946">
     <nd ref="327"/>
     <nd ref="4294967629"/>
     <nd ref="4294967634"/>
@@ -2430,34 +2430,34 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="48" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="48" version="3" timestamp="2009-06-06T04:31:12Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="4294967644"/>
     <nd ref="290"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="49" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="49" version="3" timestamp="2009-06-06T04:31:18Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="4294967647"/>
     <nd ref="4294967645"/>
     <nd ref="334"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="50" version="1" timestamp="1970-01-14T21:09:37Z" changeset="526413" uid="4946" user="user_4946">
+  <way id="50" version="1" timestamp="2008-01-03T16:18:58Z" changeset="526413" uid="4946" user="user_4946">
     <nd ref="4294967648"/>
     <nd ref="335"/>
     <nd ref="4294967649"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="51" version="3" timestamp="1970-01-15T17:47:28Z" changeset="4674825" uid="28756" user="Nescum">
+  <way id="51" version="3" timestamp="2010-05-12T07:19:38Z" changeset="4674825" uid="28756" user="Nescum">
     <nd ref="337"/>
     <nd ref="338"/>
     <nd ref="4294967654"/>
     <nd ref="4294967652"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="52" version="3" timestamp="1970-01-15T17:47:28Z" changeset="4674825" uid="28756" user="Nescum">
+  <way id="52" version="3" timestamp="2010-05-12T07:19:52Z" changeset="4674825" uid="28756" user="Nescum">
     <nd ref="4294967660"/>
     <nd ref="4294967659"/>
     <nd ref="343"/>
@@ -2469,7 +2469,7 @@
     <nd ref="339"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="53" version="3" timestamp="1970-01-14T21:09:37Z" changeset="526413" uid="4946" user="user_4946">
+  <way id="53" version="3" timestamp="2008-01-03T16:21:39Z" changeset="526413" uid="4946" user="user_4946">
     <nd ref="4294967667"/>
     <nd ref="349"/>
     <nd ref="350"/>
@@ -2480,7 +2480,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="54" version="1" timestamp="1970-01-14T21:09:37Z" changeset="526413" uid="4946" user="user_4946">
+  <way id="54" version="1" timestamp="2008-01-03T16:20:59Z" changeset="526413" uid="4946" user="user_4946">
     <nd ref="4294967670"/>
     <nd ref="4294967671"/>
     <nd ref="352"/>
@@ -2494,7 +2494,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="55" version="1" timestamp="1970-01-14T21:09:37Z" changeset="526413" uid="4946" user="user_4946">
+  <way id="55" version="1" timestamp="2008-01-03T16:23:12Z" changeset="526413" uid="4946" user="user_4946">
     <nd ref="360"/>
     <nd ref="361"/>
     <nd ref="4294967680"/>
@@ -2509,39 +2509,39 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="56" version="2" timestamp="1970-01-16T00:35:40Z" changeset="7334872" uid="229753" user="RedSpy">
+  <way id="56" version="2" timestamp="2011-02-19T18:32:14Z" changeset="7334872" uid="229753" user="RedSpy">
     <nd ref="4294967685"/>
     <nd ref="4294967686"/>
     <nd ref="366"/>
     <nd ref="93"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="57" version="2" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="57" version="2" timestamp="2009-06-06T04:30:59Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="367"/>
     <nd ref="4294967687"/>
     <nd ref="158"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="58" version="2" timestamp="1970-01-14T21:09:37Z" changeset="526413" uid="4946" user="user_4946">
+  <way id="58" version="2" timestamp="2008-01-03T16:28:33Z" changeset="526413" uid="4946" user="user_4946">
     <nd ref="4294967688"/>
     <nd ref="368"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="59" version="2" timestamp="1970-01-14T21:09:37Z" changeset="526413" uid="4946" user="user_4946">
+  <way id="59" version="2" timestamp="2008-01-03T16:26:54Z" changeset="526413" uid="4946" user="user_4946">
     <nd ref="4294967693"/>
     <nd ref="4294967549"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="60" version="3" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="60" version="3" timestamp="2009-06-08T03:16:18Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="391"/>
     <nd ref="392"/>
     <tag k="created_by" v="Potlatch 0.6a"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="61" version="4" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="61" version="4" timestamp="2009-06-08T03:16:14Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="4294967399"/>
     <nd ref="4294967698"/>
     <nd ref="4294967702"/>
@@ -2552,7 +2552,7 @@
     <tag k="created_by" v="Potlatch 0.6a"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="62" version="4" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="62" version="4" timestamp="2009-06-08T03:16:19Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="4294967698"/>
     <nd ref="380"/>
     <nd ref="4294967699"/>
@@ -2566,7 +2566,7 @@
     <tag k="created_by" v="Potlatch 0.6a"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="63" version="4" timestamp="1970-01-14T21:11:27Z" changeset="541416" uid="4946" user="user_4946">
+  <way id="63" version="4" timestamp="2008-01-04T23:04:43Z" changeset="541416" uid="4946" user="user_4946">
     <nd ref="4294967709"/>
     <nd ref="4294967718"/>
     <nd ref="403"/>
@@ -2576,20 +2576,20 @@
     <tag k="created_by" v="Potlatch 0.6a"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="64" version="2" timestamp="1970-01-14T21:11:27Z" changeset="541416" uid="4946" user="user_4946">
+  <way id="64" version="2" timestamp="2008-01-04T23:04:52Z" changeset="541416" uid="4946" user="user_4946">
     <nd ref="4294967718"/>
     <nd ref="402"/>
     <nd ref="4294967719"/>
     <tag k="created_by" v="Potlatch 0.6a"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="65" version="1" timestamp="1970-01-14T21:13:42Z" changeset="551391" uid="4946" user="user_4946">
+  <way id="65" version="1" timestamp="2008-01-06T12:30:21Z" changeset="551391" uid="4946" user="user_4946">
     <nd ref="489"/>
     <nd ref="4294967811"/>
     <tag k="created_by" v="Potlatch 0.6a"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="66" version="2" timestamp="1970-01-15T03:32:33Z" changeset="696267" uid="26492" user="phobie">
+  <way id="66" version="2" timestamp="2008-09-25T14:38:12Z" changeset="696267" uid="26492" user="phobie">
     <nd ref="560"/>
     <nd ref="4294967896"/>
     <nd ref="565"/>
@@ -2600,7 +2600,7 @@
     <tag k="created_by" v="Potlatch 0.10b"/>
     <tag k="highway" v="service"/>
   </way>
-  <way id="67" version="2" timestamp="1970-01-15T03:32:33Z" changeset="696267" uid="26492" user="phobie">
+  <way id="67" version="2" timestamp="2008-09-25T14:38:15Z" changeset="696267" uid="26492" user="phobie">
     <nd ref="4294967896"/>
     <nd ref="4294967897"/>
     <nd ref="563"/>
@@ -2615,7 +2615,7 @@
     <tag k="created_by" v="Potlatch 0.10b"/>
     <tag k="highway" v="service"/>
   </way>
-  <way id="68" version="4" timestamp="1970-01-15T17:47:28Z" changeset="4674825" uid="28756" user="Nescum">
+  <way id="68" version="4" timestamp="2010-05-12T07:20:04Z" changeset="4674825" uid="28756" user="Nescum">
     <nd ref="82"/>
     <nd ref="4294967415"/>
     <nd ref="4294967371"/>
@@ -2625,7 +2625,7 @@
     <nd ref="85"/>
     <tag k="highway" v="tertiary"/>
   </way>
-  <way id="69" version="1" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="69" version="1" timestamp="2009-06-06T04:30:06Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="26"/>
     <nd ref="29"/>
     <nd ref="4294967322"/>
@@ -2633,14 +2633,14 @@
     <tag k="highway" v="service"/>
     <tag k="service" v="parking_aisle"/>
   </way>
-  <way id="70" version="1" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="70" version="1" timestamp="2009-06-06T04:30:06Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="17"/>
     <nd ref="38"/>
     <nd ref="4294967311"/>
     <tag k="created_by" v="Potlatch 0.5d"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="71" version="1" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="71" version="1" timestamp="2009-06-06T04:30:06Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="22"/>
     <nd ref="23"/>
     <nd ref="36"/>
@@ -2650,7 +2650,7 @@
     <tag k="highway" v="service"/>
     <tag k="service" v="parking_aisle"/>
   </way>
-  <way id="72" version="1" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="72" version="1" timestamp="2009-06-06T04:30:06Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="581"/>
     <nd ref="4294967908"/>
     <nd ref="582"/>
@@ -2671,7 +2671,7 @@
     <tag k="amenity" v="parking"/>
     <tag k="area" v="yes"/>
   </way>
-  <way id="73" version="1" timestamp="1970-01-15T09:40:02Z" changeset="1451751" uid="28756" user="Nescum">
+  <way id="73" version="1" timestamp="2009-06-07T19:15:43Z" changeset="1451751" uid="28756" user="Nescum">
     <nd ref="2"/>
     <nd ref="166"/>
     <nd ref="176"/>
@@ -2684,13 +2684,13 @@
     <tag k="landuse" v="military"/>
     <tag k="name" v="US Naval Air Station"/>
   </way>
-  <way id="74" version="1" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="74" version="1" timestamp="2009-06-08T03:15:45Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="4294967334"/>
     <nd ref="4294967918"/>
     <nd ref="4294967917"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="75" version="2" timestamp="1970-01-15T16:57:00Z" changeset="4351472" uid="28756" user="Nescum">
+  <way id="75" version="2" timestamp="2010-04-07T06:10:49Z" changeset="4351472" uid="28756" user="Nescum">
     <nd ref="4294967903"/>
     <nd ref="602"/>
     <nd ref="4294967928"/>
@@ -2711,14 +2711,14 @@
     <nd ref="4294967903"/>
     <tag k="natural" v="beach"/>
   </way>
-  <way id="76" version="1" timestamp="1970-01-15T16:57:00Z" changeset="4351472" uid="28756" user="Nescum">
+  <way id="76" version="1" timestamp="2010-04-07T06:08:42Z" changeset="4351472" uid="28756" user="Nescum">
     <nd ref="4294967417"/>
     <nd ref="4294967418"/>
     <nd ref="138"/>
     <nd ref="3"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="77" version="5" timestamp="1970-01-15T22:03:06Z" changeset="6297722" uid="360370" user="markinldn">
+  <way id="77" version="5" timestamp="2010-11-05T19:49:46Z" changeset="6297722" uid="360370" user="markinldn">
     <nd ref="619"/>
     <nd ref="620"/>
     <nd ref="4294967943"/>
@@ -2727,7 +2727,7 @@
     <tag k="amenity" v="school"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="78" version="3" timestamp="1970-01-15T22:03:06Z" changeset="6297759" uid="360370" user="markinldn">
+  <way id="78" version="3" timestamp="2010-11-05T19:55:54Z" changeset="6297759" uid="360370" user="markinldn">
     <nd ref="622"/>
     <nd ref="623"/>
     <nd ref="624"/>
@@ -2737,7 +2737,7 @@
     <tag k="building" v="yes"/>
     <tag k="name" v="The American International College of Arts and Sciences"/>
   </way>
-  <way id="79" version="1" timestamp="1970-01-15T22:03:04Z" changeset="6297451" uid="360370" user="markinldn">
+  <way id="79" version="1" timestamp="2010-11-05T19:10:12Z" changeset="6297451" uid="360370" user="markinldn">
     <nd ref="607"/>
     <nd ref="4294967949"/>
     <nd ref="4294967950"/>
@@ -2750,7 +2750,7 @@
     <tag k="aeroway" v="terminal"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="80" version="3" timestamp="1970-01-15T23:52:03Z" changeset="7029519" uid="383309" user="AtonX">
+  <way id="80" version="3" timestamp="2011-01-20T11:36:46Z" changeset="7029519" uid="383309" user="AtonX">
     <nd ref="4294967953"/>
     <nd ref="636"/>
     <nd ref="4294967978"/>
@@ -2758,7 +2758,7 @@
     <nd ref="4294967525"/>
     <tag k="aeroway" v="taxiway"/>
   </way>
-  <way id="81" version="1" timestamp="1970-01-15T22:03:06Z" changeset="6297604" uid="360370" user="markinldn">
+  <way id="81" version="1" timestamp="2010-11-05T19:42:56Z" changeset="6297604" uid="360370" user="markinldn">
     <nd ref="4294967965"/>
     <nd ref="649"/>
     <nd ref="4294967966"/>
@@ -2768,7 +2768,7 @@
     <nd ref="4294967965"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="82" version="3" timestamp="1970-01-16T06:46:43Z" changeset="9737331" uid="446351" user="Da_Iceman">
+  <way id="82" version="3" timestamp="2011-11-04T10:40:37Z" changeset="9737331" uid="446351" user="Da_Iceman">
     <nd ref="639"/>
     <nd ref="4294967955"/>
     <nd ref="4294968026"/>
@@ -2788,12 +2788,12 @@
     <nd ref="639"/>
     <tag k="aeroway" v="apron"/>
   </way>
-  <way id="83" version="1" timestamp="1970-01-15T23:52:03Z" changeset="7029519" uid="383309" user="AtonX">
+  <way id="83" version="1" timestamp="2011-01-20T11:36:40Z" changeset="7029519" uid="383309" user="AtonX">
     <nd ref="670"/>
     <nd ref="4294968002"/>
     <tag k="aeroway" v="taxiway"/>
   </way>
-  <way id="84" version="1" timestamp="1970-01-15T23:52:03Z" changeset="7029519" uid="383309" user="AtonX">
+  <way id="84" version="1" timestamp="2011-01-20T11:36:41Z" changeset="7029519" uid="383309" user="AtonX">
     <nd ref="4294967906"/>
     <nd ref="574"/>
     <nd ref="4294968006"/>
@@ -2804,12 +2804,12 @@
     <nd ref="4294968009"/>
     <tag k="aeroway" v="taxiway"/>
   </way>
-  <way id="85" version="1" timestamp="1970-01-16T06:46:43Z" changeset="9737331" uid="446351" user="Da_Iceman">
+  <way id="85" version="1" timestamp="2011-11-04T10:40:27Z" changeset="9737331" uid="446351" user="Da_Iceman">
     <nd ref="4294968023"/>
     <nd ref="715"/>
     <tag k="aeroway" v="taxiway"/>
   </way>
-  <way id="86" version="2" timestamp="1970-01-16T09:23:01Z" changeset="10746315" uid="28756" user="Nescum">
+  <way id="86" version="2" timestamp="2012-02-20T23:43:37Z" changeset="10746315" uid="28756" user="Nescum">
     <nd ref="464"/>
     <nd ref="460"/>
     <nd ref="4294967782"/>
@@ -2827,7 +2827,7 @@
     <nd ref="464"/>
     <tag k="man_made" v="pier"/>
   </way>
-  <way id="87" version="1" timestamp="1970-01-16T06:46:54Z" changeset="9738559" uid="446351" user="Da_Iceman">
+  <way id="87" version="1" timestamp="2011-11-04T13:44:11Z" changeset="9738559" uid="446351" user="Da_Iceman">
     <nd ref="725"/>
     <nd ref="720"/>
     <nd ref="4294968036"/>
@@ -2836,7 +2836,7 @@
     <nd ref="4294967351"/>
     <tag k="highway" v="road"/>
   </way>
-  <way id="88" version="1" timestamp="1970-01-16T06:46:54Z" changeset="9738559" uid="446351" user="Da_Iceman">
+  <way id="88" version="1" timestamp="2011-11-04T13:44:11Z" changeset="9738559" uid="446351" user="Da_Iceman">
     <nd ref="720"/>
     <nd ref="727"/>
     <nd ref="726"/>
@@ -2846,7 +2846,7 @@
     <nd ref="4294968029"/>
     <tag k="highway" v="road"/>
   </way>
-  <way id="89" version="1" timestamp="1970-01-16T06:46:54Z" changeset="9738585" uid="446351" user="Da_Iceman">
+  <way id="89" version="1" timestamp="2011-11-04T13:47:15Z" changeset="9738585" uid="446351" user="Da_Iceman">
     <nd ref="4294968047"/>
     <nd ref="735"/>
     <nd ref="4294968046"/>
@@ -2854,7 +2854,7 @@
     <nd ref="4294968047"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="90" version="1" timestamp="1970-01-16T06:46:54Z" changeset="9738585" uid="446351" user="Da_Iceman">
+  <way id="90" version="1" timestamp="2011-11-04T13:47:16Z" changeset="9738585" uid="446351" user="Da_Iceman">
     <nd ref="730"/>
     <nd ref="737"/>
     <nd ref="736"/>
@@ -2862,7 +2862,7 @@
     <nd ref="730"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="91" version="2" timestamp="1970-01-16T08:14:08Z" changeset="10287880" uid="28756" user="Nescum">
+  <way id="91" version="2" timestamp="2012-01-04T03:36:46Z" changeset="10287880" uid="28756" user="Nescum">
     <nd ref="4294968119"/>
     <nd ref="792"/>
     <nd ref="4294968099"/>
@@ -2878,7 +2878,7 @@
     <nd ref="4294968119"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="92" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="92" version="1" timestamp="2012-01-04T03:25:04Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="799"/>
     <nd ref="4294968095"/>
     <nd ref="790"/>
@@ -2886,7 +2886,7 @@
     <nd ref="799"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="93" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="93" version="1" timestamp="2012-01-04T03:25:05Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968176"/>
     <nd ref="860"/>
     <nd ref="854"/>
@@ -2894,7 +2894,7 @@
     <nd ref="4294968176"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="94" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="94" version="1" timestamp="2012-01-04T03:25:06Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="752"/>
     <nd ref="4294968055"/>
     <nd ref="4294968053"/>
@@ -2902,7 +2902,7 @@
     <nd ref="752"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="95" version="2" timestamp="1970-01-16T08:14:08Z" changeset="10287880" uid="28756" user="Nescum">
+  <way id="95" version="2" timestamp="2012-01-04T03:36:46Z" changeset="10287880" uid="28756" user="Nescum">
     <nd ref="4294968080"/>
     <nd ref="4294968081"/>
     <nd ref="781"/>
@@ -2910,7 +2910,7 @@
     <nd ref="4294968080"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="96" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="96" version="1" timestamp="2012-01-04T03:25:07Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968171"/>
     <nd ref="851"/>
     <nd ref="855"/>
@@ -2918,7 +2918,7 @@
     <nd ref="4294968171"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="97" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="97" version="1" timestamp="2012-01-04T03:25:08Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968051"/>
     <nd ref="744"/>
     <nd ref="4294968049"/>
@@ -2926,7 +2926,7 @@
     <nd ref="4294968051"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="98" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="98" version="1" timestamp="2012-01-04T03:25:08Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968110"/>
     <nd ref="4294968076"/>
     <nd ref="777"/>
@@ -2934,7 +2934,7 @@
     <nd ref="4294968110"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="99" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="99" version="1" timestamp="2012-01-04T03:25:08Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968172"/>
     <nd ref="4294968168"/>
     <nd ref="4294968161"/>
@@ -2942,7 +2942,7 @@
     <nd ref="4294968172"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="100" version="2" timestamp="1970-01-16T08:14:08Z" changeset="10287880" uid="28756" user="Nescum">
+  <way id="100" version="2" timestamp="2012-01-04T03:36:47Z" changeset="10287880" uid="28756" user="Nescum">
     <nd ref="779"/>
     <nd ref="4294968072"/>
     <nd ref="767"/>
@@ -2950,7 +2950,7 @@
     <nd ref="779"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="101" version="2" timestamp="1970-01-16T08:14:08Z" changeset="10287880" uid="28756" user="Nescum">
+  <way id="101" version="2" timestamp="2012-01-04T03:36:47Z" changeset="10287880" uid="28756" user="Nescum">
     <nd ref="4294968087"/>
     <nd ref="4294968090"/>
     <nd ref="784"/>
@@ -2958,7 +2958,7 @@
     <nd ref="4294968087"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="102" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="102" version="1" timestamp="2012-01-04T03:25:09Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="749"/>
     <nd ref="4294968050"/>
     <nd ref="745"/>
@@ -2966,7 +2966,7 @@
     <nd ref="749"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="103" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="103" version="1" timestamp="2012-01-04T03:25:09Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968174"/>
     <nd ref="4294968173"/>
     <nd ref="852"/>
@@ -2974,7 +2974,7 @@
     <nd ref="4294968174"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="104" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="104" version="1" timestamp="2012-01-04T03:25:10Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968093"/>
     <nd ref="785"/>
     <nd ref="4294968083"/>
@@ -2984,7 +2984,7 @@
     <nd ref="4294968093"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="105" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="105" version="1" timestamp="2012-01-04T03:25:11Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="848"/>
     <nd ref="4294968162"/>
     <nd ref="4294968165"/>
@@ -2995,7 +2995,7 @@
     <nd ref="848"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="106" version="2" timestamp="1970-01-16T08:14:08Z" changeset="10287880" uid="28756" user="Nescum">
+  <way id="106" version="2" timestamp="2012-01-04T03:36:48Z" changeset="10287880" uid="28756" user="Nescum">
     <nd ref="788"/>
     <nd ref="4294968088"/>
     <nd ref="4294968089"/>
@@ -3007,7 +3007,7 @@
     <nd ref="788"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="107" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="107" version="1" timestamp="2012-01-04T03:25:12Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="793"/>
     <nd ref="4294968100"/>
     <nd ref="4294968104"/>
@@ -3019,7 +3019,7 @@
     <nd ref="793"/>
     <tag k="man_made" v="storage_tank"/>
   </way>
-  <way id="108" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="108" version="1" timestamp="2012-01-04T03:25:12Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968123"/>
     <nd ref="4294968127"/>
     <nd ref="4294968132"/>
@@ -3031,7 +3031,7 @@
     <nd ref="4294968123"/>
     <tag k="man_made" v="storage_tank"/>
   </way>
-  <way id="109" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="109" version="1" timestamp="2012-01-04T03:25:13Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968126"/>
     <nd ref="813"/>
     <nd ref="822"/>
@@ -3043,7 +3043,7 @@
     <nd ref="4294968126"/>
     <tag k="man_made" v="storage_tank"/>
   </way>
-  <way id="110" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="110" version="1" timestamp="2012-01-04T03:25:14Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="819"/>
     <nd ref="823"/>
     <nd ref="4294968145"/>
@@ -3055,7 +3055,7 @@
     <nd ref="819"/>
     <tag k="man_made" v="storage_tank"/>
   </way>
-  <way id="111" version="1" timestamp="1970-01-16T08:14:08Z" changeset="10287880" uid="28756" user="Nescum">
+  <way id="111" version="1" timestamp="2012-01-04T03:36:46Z" changeset="10287880" uid="28756" user="Nescum">
     <nd ref="4294968178"/>
     <nd ref="4294968177"/>
     <nd ref="4294968179"/>
@@ -3063,7 +3063,7 @@
     <nd ref="4294968178"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="112" version="1" timestamp="1970-01-16T09:23:01Z" changeset="10746315" uid="28756" user="Nescum">
+  <way id="112" version="1" timestamp="2012-02-20T23:43:34Z" changeset="10746315" uid="28756" user="Nescum">
     <nd ref="870"/>
     <nd ref="4294968185"/>
     <nd ref="874"/>
@@ -3071,7 +3071,7 @@
     <nd ref="870"/>
     <tag k="building" v="hangar"/>
   </way>
-  <way id="113" version="1" timestamp="1970-01-16T09:23:01Z" changeset="10746315" uid="28756" user="Nescum">
+  <way id="113" version="1" timestamp="2012-02-20T23:43:35Z" changeset="10746315" uid="28756" user="Nescum">
     <nd ref="873"/>
     <nd ref="4294968189"/>
     <nd ref="875"/>
@@ -3079,7 +3079,7 @@
     <nd ref="873"/>
     <tag k="building" v="hangar"/>
   </way>
-  <way id="1000" version="14" timestamp="1970-01-15T16:57:00Z" changeset="4351472" uid="28756" user="Nescum">
+  <way id="1000" version="14" timestamp="2010-04-07T06:08:57Z" changeset="4351472" uid="28756" user="Nescum">
     <nd ref="4294967297"/>
     <nd ref="4294967298"/>
     <nd ref="4"/>
@@ -3118,7 +3118,7 @@
     <nd ref="7"/>
     <tag k="highway" v="tertiary"/>
   </way>
-  <way id="1001" version="4" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1001" version="4" timestamp="2009-06-06T04:31:46Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="4294967326"/>
     <nd ref="28"/>
     <nd ref="29"/>
@@ -3132,7 +3132,7 @@
     <tag k="highway" v="service"/>
     <tag k="service" v="parking_aisle"/>
   </way>
-  <way id="1002" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1002" version="3" timestamp="2009-06-06T04:31:49Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="36"/>
     <nd ref="35"/>
     <nd ref="4294967325"/>
@@ -3148,7 +3148,7 @@
     <tag k="highway" v="service"/>
     <tag k="service" v="parking_aisle"/>
   </way>
-  <way id="1003" version="6" timestamp="1970-01-15T23:52:03Z" changeset="7029519" uid="383309" user="AtonX">
+  <way id="1003" version="6" timestamp="2011-01-20T11:36:44Z" changeset="7029519" uid="383309" user="AtonX">
     <nd ref="122"/>
     <nd ref="4294967408"/>
     <nd ref="4294967409"/>
@@ -3170,7 +3170,7 @@
     <tag k="layer" v="-1"/>
     <tag k="railway" v="abandoned"/>
   </way>
-  <way id="1004" version="7" timestamp="1970-01-15T09:43:32Z" changeset="1473791" uid="28756" user="Nescum">
+  <way id="1004" version="7" timestamp="2009-06-10T05:48:46Z" changeset="1473791" uid="28756" user="Nescum">
     <nd ref="4294967415"/>
     <nd ref="4294967416"/>
     <nd ref="4294967528"/>
@@ -3185,7 +3185,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="1005" version="10" timestamp="1970-01-16T12:56:49Z" changeset="12279657" uid="722137" user="OSMF Redaction Account">
+  <way id="1005" version="10" timestamp="2012-07-18T11:10:09Z" changeset="12279657" uid="722137" user="OSMF Redaction Account">
     <nd ref="4294967423"/>
     <nd ref="145"/>
     <nd ref="4294967426"/>
@@ -3194,7 +3194,7 @@
     <nd ref="139"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1006" version="1" timestamp="1970-01-14T21:01:23Z" changeset="457884" uid="4946" user="user_4946">
+  <way id="1006" version="1" timestamp="2007-12-28T23:06:16Z" changeset="457884" uid="4946" user="user_4946">
     <nd ref="142"/>
     <nd ref="143"/>
     <nd ref="4294967425"/>
@@ -3203,23 +3203,23 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1007" version="5" timestamp="1970-01-16T12:56:49Z" changeset="12279657" uid="722137" user="OSMF Redaction Account">
+  <way id="1007" version="5" timestamp="2012-07-18T11:10:10Z" changeset="12279657" uid="722137" user="OSMF Redaction Account">
     <nd ref="146"/>
     <nd ref="4294967426"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1008" version="3" timestamp="1970-01-15T17:20:29Z" changeset="4503656" uid="28756" user="Nescum">
+  <way id="1008" version="3" timestamp="2010-04-23T13:29:19Z" changeset="4503656" uid="28756" user="Nescum">
     <nd ref="147"/>
     <nd ref="4294967933"/>
     <tag k="highway" v="service"/>
   </way>
-  <way id="1009" version="5" timestamp="1970-01-16T00:12:40Z" changeset="7176813" uid="229753" user="RedSpy">
+  <way id="1009" version="5" timestamp="2011-02-03T19:13:52Z" changeset="7176813" uid="229753" user="RedSpy">
     <nd ref="155"/>
     <nd ref="148"/>
     <tag k="highway" v="tertiary"/>
     <tag k="name" v="LIAT Road"/>
   </way>
-  <way id="1010" version="3" timestamp="1970-01-14T21:01:23Z" changeset="457884" uid="4946" user="user_4946">
+  <way id="1010" version="3" timestamp="2007-12-28T23:12:12Z" changeset="457884" uid="4946" user="user_4946">
     <nd ref="153"/>
     <nd ref="4294967435"/>
     <nd ref="154"/>
@@ -3228,19 +3228,19 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="1011" version="2" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1011" version="2" timestamp="2009-06-06T04:31:26Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="4294967696"/>
     <nd ref="4294967437"/>
     <nd ref="156"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1012" version="3" timestamp="1970-01-16T12:56:49Z" changeset="12279657" uid="722137" user="OSMF Redaction Account">
+  <way id="1012" version="3" timestamp="2012-07-18T11:10:09Z" changeset="12279657" uid="722137" user="OSMF Redaction Account">
     <nd ref="1"/>
     <nd ref="145"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1013" version="2" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1013" version="2" timestamp="2009-06-06T04:31:54Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="158"/>
     <nd ref="4294967439"/>
     <nd ref="159"/>
@@ -3262,13 +3262,13 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1014" version="1" timestamp="1970-01-14T21:01:23Z" changeset="457884" uid="4946" user="user_4946">
+  <way id="1014" version="1" timestamp="2007-12-28T23:16:51Z" changeset="457884" uid="4946" user="user_4946">
     <nd ref="4294967451"/>
     <nd ref="4294967452"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1015" version="15" timestamp="1970-01-15T17:13:53Z" changeset="4464015" uid="28756" user="Nescum">
+  <way id="1015" version="15" timestamp="2010-04-18T23:34:22Z" changeset="4464015" uid="28756" user="Nescum">
     <nd ref="2"/>
     <nd ref="166"/>
     <nd ref="176"/>
@@ -3310,7 +3310,7 @@
     <tag k="highway" v="primary"/>
     <tag k="name" v="Sir George Walter Highway"/>
   </way>
-  <way id="1016" version="4" timestamp="1970-01-15T22:03:05Z" changeset="6297604" uid="360370" user="markinldn">
+  <way id="1016" version="4" timestamp="2010-11-05T19:37:14Z" changeset="6297604" uid="360370" user="markinldn">
     <nd ref="4294967311"/>
     <nd ref="588"/>
     <nd ref="4294967956"/>
@@ -3323,7 +3323,7 @@
     <nd ref="4294967468"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="1017" version="3" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="1017" version="3" timestamp="2009-06-08T03:16:23Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="4294967473"/>
     <nd ref="4294967469"/>
     <nd ref="4294967470"/>
@@ -3338,7 +3338,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="1018" version="3" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="1018" version="3" timestamp="2009-06-08T03:16:24Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="183"/>
     <nd ref="184"/>
     <nd ref="4294967493"/>
@@ -3348,13 +3348,13 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1019" version="4" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="1019" version="4" timestamp="2009-06-08T03:16:07Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="4294967484"/>
     <nd ref="4294967483"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1020" version="3" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="1020" version="3" timestamp="2009-06-08T03:16:04Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="195"/>
     <nd ref="4294967487"/>
     <nd ref="196"/>
@@ -3363,7 +3363,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1021" version="2" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="1021" version="2" timestamp="2009-06-08T03:16:15Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="4294967491"/>
     <nd ref="199"/>
     <nd ref="200"/>
@@ -3373,14 +3373,14 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1022" version="4" timestamp="1970-01-15T17:03:51Z" changeset="4400508" uid="28756" user="Nescum">
+  <way id="1022" version="4" timestamp="2010-04-12T00:24:38Z" changeset="4400508" uid="28756" user="Nescum">
     <nd ref="4294967494"/>
     <nd ref="203"/>
     <nd ref="610"/>
     <nd ref="202"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1023" version="6" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1023" version="6" timestamp="2009-06-06T04:31:20Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="4294967527"/>
     <nd ref="229"/>
     <nd ref="230"/>
@@ -3388,13 +3388,13 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1024" version="3" timestamp="1970-01-15T09:50:21Z" changeset="1520390" uid="28756" user="Nescum">
+  <way id="1024" version="3" timestamp="2009-06-14T23:13:01Z" changeset="1520390" uid="28756" user="Nescum">
     <nd ref="230"/>
     <nd ref="4294967529"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="1025" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1025" version="3" timestamp="2009-06-06T04:31:50Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="244"/>
     <nd ref="247"/>
     <nd ref="248"/>
@@ -3406,28 +3406,28 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1026" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1026" version="3" timestamp="2009-06-06T04:31:51Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="254"/>
     <nd ref="4294967550"/>
     <nd ref="92"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1027" version="3" timestamp="1970-01-15T17:47:28Z" changeset="4674825" uid="28756" user="Nescum">
+  <way id="1027" version="3" timestamp="2010-05-12T07:20:05Z" changeset="4674825" uid="28756" user="Nescum">
     <nd ref="4294967552"/>
     <nd ref="255"/>
     <nd ref="4294967553"/>
     <nd ref="256"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1028" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1028" version="3" timestamp="2009-06-06T04:31:53Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="257"/>
     <nd ref="4294967554"/>
     <nd ref="258"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1029" version="3" timestamp="1970-01-15T16:57:00Z" changeset="4351472" uid="28756" user="Nescum">
+  <way id="1029" version="3" timestamp="2010-04-07T06:09:29Z" changeset="4351472" uid="28756" user="Nescum">
     <nd ref="265"/>
     <nd ref="266"/>
     <nd ref="4294967560"/>
@@ -3435,7 +3435,7 @@
     <nd ref="4294967559"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1030" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1030" version="3" timestamp="2009-06-06T04:32:00Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="271"/>
     <nd ref="4294967564"/>
     <nd ref="576"/>
@@ -3449,7 +3449,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1031" version="5" timestamp="1970-01-15T16:57:00Z" changeset="4351472" uid="28756" user="Nescum">
+  <way id="1031" version="5" timestamp="2010-04-07T06:09:03Z" changeset="4351472" uid="28756" user="Nescum">
     <nd ref="4294967650"/>
     <nd ref="4294967571"/>
     <nd ref="4294967649"/>
@@ -3470,7 +3470,7 @@
     <nd ref="4294967581"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="1032" version="8" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1032" version="8" timestamp="2009-06-06T04:31:36Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="4294967650"/>
     <nd ref="4294967582"/>
     <nd ref="4294967583"/>
@@ -3514,7 +3514,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="1033" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1033" version="3" timestamp="2009-06-06T04:31:38Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="4294967600"/>
     <nd ref="295"/>
     <nd ref="4294967636"/>
@@ -3525,7 +3525,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1034" version="6" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1034" version="6" timestamp="2009-06-06T04:31:39Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="297"/>
     <nd ref="308"/>
     <nd ref="4294967603"/>
@@ -3547,7 +3547,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1035" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1035" version="3" timestamp="2009-06-06T04:31:42Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="305"/>
     <nd ref="306"/>
     <nd ref="4294967610"/>
@@ -3557,7 +3557,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1036" version="3" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="1036" version="3" timestamp="2009-06-08T03:16:20Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="309"/>
     <nd ref="4294967612"/>
     <nd ref="4294967613"/>
@@ -3565,7 +3565,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1037" version="4" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="1037" version="4" timestamp="2009-06-08T03:16:25Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="4294967618"/>
     <nd ref="313"/>
     <nd ref="4294967619"/>
@@ -3578,7 +3578,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1038" version="2" timestamp="1970-01-14T21:09:38Z" changeset="526413" uid="4946" user="user_4946">
+  <way id="1038" version="2" timestamp="2008-01-03T16:36:37Z" changeset="526413" uid="4946" user="user_4946">
     <nd ref="4294967622"/>
     <nd ref="315"/>
     <nd ref="316"/>
@@ -3588,7 +3588,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1039" version="2" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1039" version="2" timestamp="2009-06-06T04:31:11Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="329"/>
     <nd ref="4294967637"/>
     <nd ref="330"/>
@@ -3604,14 +3604,14 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="1040" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1040" version="3" timestamp="2009-06-06T04:31:11Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="4294967645"/>
     <nd ref="4294967646"/>
     <nd ref="4294967595"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1041" version="8" timestamp="1970-01-15T17:47:28Z" changeset="4674825" uid="28756" user="Nescum">
+  <way id="1041" version="8" timestamp="2010-05-12T07:19:59Z" changeset="4674825" uid="28756" user="Nescum">
     <nd ref="4294967650"/>
     <nd ref="577"/>
     <nd ref="4294967563"/>
@@ -3627,7 +3627,7 @@
     <nd ref="92"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1042" version="3" timestamp="1970-01-15T17:47:28Z" changeset="4674825" uid="28756" user="Nescum">
+  <way id="1042" version="3" timestamp="2010-05-12T07:19:42Z" changeset="4674825" uid="28756" user="Nescum">
     <nd ref="340"/>
     <nd ref="4294967656"/>
     <nd ref="341"/>
@@ -3635,14 +3635,14 @@
     <nd ref="4294967655"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1043" version="2" timestamp="1970-01-14T21:09:37Z" changeset="526413" uid="4946" user="user_4946">
+  <way id="1043" version="2" timestamp="2008-01-03T16:27:50Z" changeset="526413" uid="4946" user="user_4946">
     <nd ref="4294967661"/>
     <nd ref="344"/>
     <nd ref="4294967662"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1044" version="4" timestamp="1970-01-15T16:57:00Z" changeset="4351472" uid="28756" user="Nescum">
+  <way id="1044" version="4" timestamp="2010-04-07T06:10:05Z" changeset="4351472" uid="28756" user="Nescum">
     <nd ref="4294967374"/>
     <nd ref="4294967676"/>
     <nd ref="356"/>
@@ -3659,7 +3659,7 @@
     <nd ref="4294967376"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1045" version="4" timestamp="1970-01-14T21:09:37Z" changeset="526413" uid="4946" user="user_4946">
+  <way id="1045" version="4" timestamp="2008-01-03T16:23:23Z" changeset="526413" uid="4946" user="user_4946">
     <nd ref="359"/>
     <nd ref="4294967678"/>
     <nd ref="4294967679"/>
@@ -3669,7 +3669,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="1046" version="2" timestamp="1970-01-14T21:09:37Z" changeset="526413" uid="4946" user="user_4946">
+  <way id="1046" version="2" timestamp="2008-01-03T16:27:43Z" changeset="526413" uid="4946" user="user_4946">
     <nd ref="369"/>
     <nd ref="4294967689"/>
     <nd ref="370"/>
@@ -3678,7 +3678,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1047" version="2" timestamp="1970-01-14T21:09:37Z" changeset="526413" uid="4946" user="user_4946">
+  <way id="1047" version="2" timestamp="2008-01-03T16:26:49Z" changeset="526413" uid="4946" user="user_4946">
     <nd ref="372"/>
     <nd ref="373"/>
     <nd ref="4294967691"/>
@@ -3687,7 +3687,7 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1048" version="3" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1048" version="3" timestamp="2009-06-06T04:31:53Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="4294967694"/>
     <nd ref="4294967695"/>
     <nd ref="375"/>
@@ -3695,12 +3695,12 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1049" version="2" timestamp="1970-01-15T22:01:43Z" changeset="6291641" uid="360370" user="markinldn">
+  <way id="1049" version="2" timestamp="2010-11-04T20:51:14Z" changeset="6291641" uid="360370" user="markinldn">
     <nd ref="376"/>
     <nd ref="4294967696"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="1050" version="5" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="1050" version="5" timestamp="2009-06-08T03:16:13Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="4294967702"/>
     <nd ref="385"/>
     <nd ref="4294967703"/>
@@ -3714,7 +3714,7 @@
     <tag k="created_by" v="Potlatch 0.6a"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1051" version="5" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="1051" version="5" timestamp="2009-06-08T03:16:18Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="4294967922"/>
     <nd ref="594"/>
     <nd ref="387"/>
@@ -3727,14 +3727,14 @@
     <tag k="created_by" v="Potlatch 0.6a"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1052" version="2" timestamp="1970-01-14T21:11:27Z" changeset="541416" uid="4946" user="user_4946">
+  <way id="1052" version="2" timestamp="2008-01-04T23:06:31Z" changeset="541416" uid="4946" user="user_4946">
     <nd ref="389"/>
     <nd ref="390"/>
     <nd ref="4294967708"/>
     <tag k="created_by" v="Potlatch 0.6a"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1053" version="4" timestamp="1970-01-14T21:11:27Z" changeset="541416" uid="4946" user="user_4946">
+  <way id="1053" version="4" timestamp="2008-01-04T23:04:41Z" changeset="541416" uid="4946" user="user_4946">
     <nd ref="403"/>
     <nd ref="4294967711"/>
     <nd ref="395"/>
@@ -3754,13 +3754,13 @@
     <tag k="created_by" v="Potlatch 0.6a"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1054" version="2" timestamp="1970-01-14T21:11:27Z" changeset="541416" uid="4946" user="user_4946">
+  <way id="1054" version="2" timestamp="2008-01-04T23:04:49Z" changeset="541416" uid="4946" user="user_4946">
     <nd ref="4294967720"/>
     <nd ref="399"/>
     <tag k="created_by" v="Potlatch 0.6a"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1055" version="4" timestamp="1970-01-16T09:38:44Z" changeset="10852779" uid="28756" user="Nescum">
+  <way id="1055" version="4" timestamp="2012-03-02T21:48:42Z" changeset="10852779" uid="28756" user="Nescum">
     <nd ref="4294967812"/>
     <nd ref="490"/>
     <nd ref="4294967813"/>
@@ -3791,7 +3791,7 @@
     <tag k="old_name" v="Airport Cricket Ground"/>
     <tag k="sport" v="cricket; socker"/>
   </way>
-  <way id="1056" version="22" timestamp="1970-01-16T06:46:47Z" changeset="9737749" uid="446351" user="Da_Iceman">
+  <way id="1056" version="22" timestamp="2011-11-04T11:50:11Z" changeset="9737749" uid="446351" user="Da_Iceman">
     <nd ref="4294967858"/>
     <nd ref="4294967859"/>
     <nd ref="713"/>
@@ -3825,7 +3825,7 @@
     <nd ref="404"/>
     <tag k="natural" v="coastline"/>
   </way>
-  <way id="1057" version="8" timestamp="1970-01-16T09:23:01Z" changeset="10746315" uid="28756" user="Nescum">
+  <way id="1057" version="8" timestamp="2012-02-20T23:43:38Z" changeset="10746315" uid="28756" user="Nescum">
     <nd ref="404"/>
     <nd ref="4294967721"/>
     <nd ref="405"/>
@@ -4068,7 +4068,7 @@
     <tag k="history" v="Retrieved from v15"/>
     <tag k="natural" v="coastline"/>
   </way>
-  <way id="1058" version="1" timestamp="1970-01-15T03:32:33Z" changeset="696267" uid="26492" user="phobie">
+  <way id="1058" version="1" timestamp="2008-09-25T14:32:35Z" changeset="696267" uid="26492" user="phobie">
     <nd ref="538"/>
     <nd ref="4294967873"/>
     <nd ref="539"/>
@@ -4118,14 +4118,14 @@
     <tag k="created_by" v="Potlatch 0.10b"/>
     <tag k="natural" v="water"/>
   </way>
-  <way id="1059" version="1" timestamp="1970-01-15T03:32:33Z" changeset="696267" uid="26492" user="phobie">
+  <way id="1059" version="1" timestamp="2008-09-25T14:41:00Z" changeset="696267" uid="26492" user="phobie">
     <nd ref="4294967496"/>
     <nd ref="571"/>
     <nd ref="4294967903"/>
     <tag k="created_by" v="Potlatch 0.10b"/>
     <tag k="highway" v="unclassified"/>
   </way>
-  <way id="1060" version="2" timestamp="1970-01-15T22:03:06Z" changeset="6297604" uid="360370" user="markinldn">
+  <way id="1060" version="2" timestamp="2010-11-05T19:42:55Z" changeset="6297604" uid="360370" user="markinldn">
     <nd ref="572"/>
     <nd ref="4294967904"/>
     <nd ref="4294967905"/>
@@ -4133,7 +4133,7 @@
     <nd ref="572"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1061" version="1" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1061" version="1" timestamp="2009-06-06T04:30:06Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="25"/>
     <nd ref="31"/>
     <nd ref="4294967325"/>
@@ -4141,7 +4141,7 @@
     <tag k="highway" v="service"/>
     <tag k="service" v="parking_aisle"/>
   </way>
-  <way id="1062" version="1" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1062" version="1" timestamp="2009-06-06T04:30:06Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="4294967907"/>
     <nd ref="18"/>
     <nd ref="4294967316"/>
@@ -4154,7 +4154,7 @@
     <tag k="highway" v="service"/>
     <tag k="service" v="parking_aisle"/>
   </way>
-  <way id="1063" version="1" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1063" version="1" timestamp="2009-06-06T04:30:06Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="24"/>
     <nd ref="25"/>
     <nd ref="4294967318"/>
@@ -4166,7 +4166,7 @@
     <tag k="highway" v="service"/>
     <tag k="service" v="parking_aisle"/>
   </way>
-  <way id="1064" version="1" timestamp="1970-01-15T09:37:42Z" changeset="1434251" uid="28756" user="Nescum">
+  <way id="1064" version="1" timestamp="2009-06-06T04:30:07Z" changeset="1434251" uid="28756" user="Nescum">
     <nd ref="318"/>
     <nd ref="4294967627"/>
     <nd ref="319"/>
@@ -4175,25 +4175,25 @@
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1065" version="1" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="1065" version="1" timestamp="2009-06-08T03:15:45Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="591"/>
     <nd ref="592"/>
     <nd ref="4294967919"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1066" version="1" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="1066" version="1" timestamp="2009-06-08T03:15:45Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="378"/>
     <nd ref="4294967697"/>
     <nd ref="377"/>
     <tag k="created_by" v="Potlatch 0.6"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1067" version="1" timestamp="1970-01-15T09:40:30Z" changeset="1454716" uid="28756" user="Nescum">
+  <way id="1067" version="1" timestamp="2009-06-08T03:15:46Z" changeset="1454716" uid="28756" user="Nescum">
     <nd ref="4294967701"/>
     <nd ref="4294967921"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1068" version="1" timestamp="1970-01-15T09:56:59Z" changeset="1564535" uid="736" user="Steve Chilton">
+  <way id="1068" version="1" timestamp="2009-06-19T13:54:53Z" changeset="1564535" uid="736" user="Steve Chilton">
     <nd ref="598"/>
     <nd ref="4294967925"/>
     <nd ref="599"/>
@@ -4210,7 +4210,7 @@
     <nd ref="598"/>
     <tag k="natural" v="beach"/>
   </way>
-  <way id="1069" version="1" timestamp="1970-01-15T16:57:00Z" changeset="4351472" uid="28756" user="Nescum">
+  <way id="1069" version="1" timestamp="2010-04-07T06:08:39Z" changeset="4351472" uid="28756" user="Nescum">
     <nd ref="139"/>
     <nd ref="4294967420"/>
     <nd ref="4294967421"/>
@@ -4218,12 +4218,12 @@
     <nd ref="4294967422"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1070" version="1" timestamp="1970-01-15T17:20:29Z" changeset="4503656" uid="28756" user="Nescum">
+  <way id="1070" version="1" timestamp="2010-04-23T13:29:19Z" changeset="4503656" uid="28756" user="Nescum">
     <nd ref="147"/>
     <nd ref="4294967419"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1071" version="1" timestamp="1970-01-15T17:47:28Z" changeset="4674825" uid="28756" user="Nescum">
+  <way id="1071" version="1" timestamp="2010-05-12T07:19:36Z" changeset="4674825" uid="28756" user="Nescum">
     <nd ref="84"/>
     <nd ref="4294967539"/>
     <nd ref="4294967540"/>
@@ -4242,7 +4242,7 @@
     <nd ref="237"/>
     <tag k="highway" v="residential"/>
   </way>
-  <way id="1072" version="4" timestamp="1970-01-15T22:03:06Z" changeset="6297759" uid="360370" user="markinldn">
+  <way id="1072" version="4" timestamp="2010-11-05T19:55:53Z" changeset="6297759" uid="360370" user="markinldn">
     <nd ref="614"/>
     <nd ref="4294967940"/>
     <nd ref="615"/>
@@ -4256,7 +4256,7 @@
     <tag k="building" v="yes"/>
     <tag k="name" v="The Antigua &amp; Barbuda International Institute of Technology"/>
   </way>
-  <way id="1073" version="4" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1073" version="4" timestamp="2012-01-04T03:25:19Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="625"/>
     <nd ref="632"/>
     <nd ref="4294967948"/>
@@ -4274,7 +4274,7 @@
     <tag k="building" v="yes"/>
     <tag k="name" v="Antigua and Barbuda Hospitality Training Institute"/>
   </way>
-  <way id="1074" version="3" timestamp="1970-01-15T23:52:03Z" changeset="7029519" uid="383309" user="AtonX">
+  <way id="1074" version="3" timestamp="2011-01-20T11:36:45Z" changeset="7029519" uid="383309" user="AtonX">
     <nd ref="4294967982"/>
     <nd ref="637"/>
     <nd ref="699"/>
@@ -4283,7 +4283,7 @@
     <nd ref="638"/>
     <tag k="aeroway" v="taxiway"/>
   </way>
-  <way id="1075" version="1" timestamp="1970-01-15T22:03:05Z" changeset="6297604" uid="360370" user="markinldn">
+  <way id="1075" version="1" timestamp="2010-11-05T19:37:15Z" changeset="6297604" uid="360370" user="markinldn">
     <nd ref="4294967958"/>
     <nd ref="4294967959"/>
     <nd ref="4294967960"/>
@@ -4294,7 +4294,7 @@
     <nd ref="4294967957"/>
     <tag k="highway" v="service"/>
   </way>
-  <way id="1076" version="1" timestamp="1970-01-15T22:03:05Z" changeset="6297604" uid="360370" user="markinldn">
+  <way id="1076" version="1" timestamp="2010-11-05T19:38:30Z" changeset="6297604" uid="360370" user="markinldn">
     <nd ref="4294967962"/>
     <nd ref="4294967963"/>
     <nd ref="643"/>
@@ -4302,7 +4302,7 @@
     <nd ref="645"/>
     <tag k="aeroway" v="taxiway"/>
   </way>
-  <way id="1077" version="1" timestamp="1970-01-15T22:03:06Z" changeset="6297604" uid="360370" user="markinldn">
+  <way id="1077" version="1" timestamp="2010-11-05T19:42:56Z" changeset="6297604" uid="360370" user="markinldn">
     <nd ref="646"/>
     <nd ref="647"/>
     <nd ref="4294967964"/>
@@ -4310,7 +4310,7 @@
     <nd ref="646"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1078" version="1" timestamp="1970-01-15T22:03:06Z" changeset="6297604" uid="360370" user="markinldn">
+  <way id="1078" version="1" timestamp="2010-11-05T19:42:57Z" changeset="6297604" uid="360370" user="markinldn">
     <nd ref="653"/>
     <nd ref="654"/>
     <nd ref="4294967967"/>
@@ -4318,7 +4318,7 @@
     <nd ref="653"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1079" version="1" timestamp="1970-01-15T22:03:06Z" changeset="6297722" uid="360370" user="markinldn">
+  <way id="1079" version="1" timestamp="2010-11-05T19:48:03Z" changeset="6297722" uid="360370" user="markinldn">
     <nd ref="656"/>
     <nd ref="657"/>
     <nd ref="4294967968"/>
@@ -4327,7 +4327,7 @@
     <tag k="building" v="yes"/>
     <tag k="name" v="LIAT Head Office"/>
   </way>
-  <way id="1080" version="1" timestamp="1970-01-15T22:03:06Z" changeset="6297759" uid="360370" user="markinldn">
+  <way id="1080" version="1" timestamp="2010-11-05T19:55:55Z" changeset="6297759" uid="360370" user="markinldn">
     <nd ref="659"/>
     <nd ref="660"/>
     <nd ref="4294967969"/>
@@ -4335,14 +4335,14 @@
     <nd ref="659"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1081" version="1" timestamp="1970-01-15T23:52:03Z" changeset="7029519" uid="383309" user="AtonX">
+  <way id="1081" version="1" timestamp="2011-01-20T11:36:40Z" changeset="7029519" uid="383309" user="AtonX">
     <nd ref="4294968007"/>
     <nd ref="4294967982"/>
     <nd ref="4294967906"/>
     <nd ref="4294968008"/>
     <tag k="aeroway" v="taxiway"/>
   </way>
-  <way id="1082" version="2" timestamp="1970-01-16T09:23:01Z" changeset="10746315" uid="28756" user="Nescum">
+  <way id="1082" version="2" timestamp="2012-02-20T23:43:35Z" changeset="10746315" uid="28756" user="Nescum">
     <nd ref="694"/>
     <nd ref="682"/>
     <nd ref="700"/>
@@ -4429,7 +4429,7 @@
     <tag k="name" v="V.C. Bird International Airport"/>
     <tag k="variation" v="14 W 2006-05"/>
   </way>
-  <way id="1083" version="2" timestamp="1970-01-16T06:46:54Z" changeset="9738585" uid="446351" user="Da_Iceman">
+  <way id="1083" version="2" timestamp="2011-11-04T13:47:17Z" changeset="9738585" uid="446351" user="Da_Iceman">
     <nd ref="4294968042"/>
     <nd ref="4294968033"/>
     <nd ref="4294968041"/>
@@ -4441,7 +4441,7 @@
     <nd ref="4294968042"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1084" version="2" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1084" version="2" timestamp="2012-01-04T03:25:42Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="515"/>
     <nd ref="4294967841"/>
     <nd ref="4294967842"/>
@@ -4454,7 +4454,7 @@
     <nd ref="515"/>
     <tag k="man_made" v="pier"/>
   </way>
-  <way id="1085" version="2" timestamp="1970-01-16T06:46:54Z" changeset="9738585" uid="446351" user="Da_Iceman">
+  <way id="1085" version="2" timestamp="2011-11-04T13:47:16Z" changeset="9738585" uid="446351" user="Da_Iceman">
     <nd ref="729"/>
     <nd ref="4294968032"/>
     <nd ref="719"/>
@@ -4462,7 +4462,7 @@
     <nd ref="729"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1086" version="1" timestamp="1970-01-16T06:46:54Z" changeset="9738559" uid="446351" user="Da_Iceman">
+  <way id="1086" version="1" timestamp="2011-11-04T13:44:11Z" changeset="9738559" uid="446351" user="Da_Iceman">
     <nd ref="4294968034"/>
     <nd ref="4294968044"/>
     <nd ref="722"/>
@@ -4471,13 +4471,13 @@
     <nd ref="4294968031"/>
     <tag k="highway" v="road"/>
   </way>
-  <way id="1087" version="1" timestamp="1970-01-16T06:46:54Z" changeset="9738559" uid="446351" user="Da_Iceman">
+  <way id="1087" version="1" timestamp="2011-11-04T13:44:11Z" changeset="9738559" uid="446351" user="Da_Iceman">
     <nd ref="4294968043"/>
     <nd ref="718"/>
     <nd ref="4294968035"/>
     <tag k="highway" v="road"/>
   </way>
-  <way id="1088" version="1" timestamp="1970-01-16T06:46:54Z" changeset="9738585" uid="446351" user="Da_Iceman">
+  <way id="1088" version="1" timestamp="2011-11-04T13:47:16Z" changeset="9738585" uid="446351" user="Da_Iceman">
     <nd ref="4294968045"/>
     <nd ref="4294968048"/>
     <nd ref="734"/>
@@ -4485,7 +4485,7 @@
     <nd ref="4294968045"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1089" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1089" version="1" timestamp="2012-01-04T03:25:01Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968164"/>
     <nd ref="4294968160"/>
     <nd ref="847"/>
@@ -4501,7 +4501,7 @@
     <tag k="phone" v="+1-268-562-7070"/>
     <tag k="website" v="http://www.highpointantigua.com/"/>
   </way>
-  <way id="1090" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1090" version="1" timestamp="2012-01-04T03:25:03Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="760"/>
     <nd ref="761"/>
     <nd ref="758"/>
@@ -4523,7 +4523,7 @@
     <nd ref="760"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1091" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1091" version="1" timestamp="2012-01-04T03:25:04Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968159"/>
     <nd ref="4294968158"/>
     <nd ref="843"/>
@@ -4531,7 +4531,7 @@
     <nd ref="4294968159"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1092" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1092" version="1" timestamp="2012-01-04T03:25:04Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968062"/>
     <nd ref="4294968052"/>
     <nd ref="747"/>
@@ -4539,7 +4539,7 @@
     <nd ref="4294968062"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1093" version="2" timestamp="1970-01-16T08:14:08Z" changeset="10287880" uid="28756" user="Nescum">
+  <way id="1093" version="2" timestamp="2012-01-04T03:36:46Z" changeset="10287880" uid="28756" user="Nescum">
     <nd ref="768"/>
     <nd ref="769"/>
     <nd ref="776"/>
@@ -4547,7 +4547,7 @@
     <nd ref="768"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1094" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1094" version="1" timestamp="2012-01-04T03:25:06Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="762"/>
     <nd ref="4294968067"/>
     <nd ref="773"/>
@@ -4555,7 +4555,7 @@
     <nd ref="762"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1095" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1095" version="1" timestamp="2012-01-04T03:25:06Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="858"/>
     <nd ref="4294968175"/>
     <nd ref="861"/>
@@ -4563,7 +4563,7 @@
     <nd ref="858"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1096" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1096" version="1" timestamp="2012-01-04T03:25:07Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968069"/>
     <nd ref="4294968066"/>
     <nd ref="4294968065"/>
@@ -4571,7 +4571,7 @@
     <nd ref="4294968069"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1097" version="2" timestamp="1970-01-16T08:14:08Z" changeset="10287880" uid="28756" user="Nescum">
+  <way id="1097" version="2" timestamp="2012-01-04T03:36:47Z" changeset="10287880" uid="28756" user="Nescum">
     <nd ref="4294968084"/>
     <nd ref="4294968077"/>
     <nd ref="4294968078"/>
@@ -4579,7 +4579,7 @@
     <nd ref="4294968084"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1098" version="2" timestamp="1970-01-16T08:14:08Z" changeset="10287880" uid="28756" user="Nescum">
+  <way id="1098" version="2" timestamp="2012-01-04T03:36:47Z" changeset="10287880" uid="28756" user="Nescum">
     <nd ref="783"/>
     <nd ref="4294968086"/>
     <nd ref="786"/>
@@ -4587,7 +4587,7 @@
     <nd ref="783"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1099" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1099" version="1" timestamp="2012-01-04T03:25:08Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="740"/>
     <nd ref="738"/>
     <nd ref="739"/>
@@ -4595,7 +4595,7 @@
     <nd ref="740"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1100" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1100" version="1" timestamp="2012-01-04T03:25:09Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968054"/>
     <nd ref="743"/>
     <nd ref="742"/>
@@ -4603,7 +4603,7 @@
     <nd ref="4294968054"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1101" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1101" version="1" timestamp="2012-01-04T03:25:09Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968058"/>
     <nd ref="4294968060"/>
     <nd ref="4294968070"/>
@@ -4611,7 +4611,7 @@
     <nd ref="4294968058"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1102" version="2" timestamp="1970-01-16T08:14:08Z" changeset="10287880" uid="28756" user="Nescum">
+  <way id="1102" version="2" timestamp="2012-01-04T03:36:47Z" changeset="10287880" uid="28756" user="Nescum">
     <nd ref="4294968079"/>
     <nd ref="4294968074"/>
     <nd ref="775"/>
@@ -4621,7 +4621,7 @@
     <nd ref="4294968079"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1103" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1103" version="1" timestamp="2012-01-04T03:25:11Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968152"/>
     <nd ref="837"/>
     <nd ref="841"/>
@@ -4633,7 +4633,7 @@
     <nd ref="4294968152"/>
     <tag k="man_made" v="storage_tank"/>
   </way>
-  <way id="1104" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1104" version="1" timestamp="2012-01-04T03:25:11Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968128"/>
     <nd ref="817"/>
     <nd ref="4294968139"/>
@@ -4645,7 +4645,7 @@
     <nd ref="4294968128"/>
     <tag k="man_made" v="storage_tank"/>
   </way>
-  <way id="1105" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1105" version="1" timestamp="2012-01-04T03:25:12Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968129"/>
     <nd ref="4294968133"/>
     <nd ref="4294968140"/>
@@ -4657,7 +4657,7 @@
     <nd ref="4294968129"/>
     <tag k="man_made" v="storage_tank"/>
   </way>
-  <way id="1106" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1106" version="1" timestamp="2012-01-04T03:25:13Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="833"/>
     <nd ref="4294968150"/>
     <nd ref="4294968154"/>
@@ -4669,7 +4669,7 @@
     <nd ref="833"/>
     <tag k="man_made" v="storage_tank"/>
   </way>
-  <way id="1107" version="2" timestamp="1970-01-16T08:14:08Z" changeset="10287880" uid="28756" user="Nescum">
+  <way id="1107" version="2" timestamp="2012-01-04T03:36:48Z" changeset="10287880" uid="28756" user="Nescum">
     <nd ref="789"/>
     <nd ref="791"/>
     <nd ref="4294968102"/>
@@ -4681,7 +4681,7 @@
     <nd ref="789"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1108" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1108" version="1" timestamp="2012-01-04T03:25:14Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="811"/>
     <nd ref="821"/>
     <nd ref="4294968148"/>
@@ -4693,7 +4693,7 @@
     <nd ref="811"/>
     <tag k="man_made" v="storage_tank"/>
   </way>
-  <way id="1109" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1109" version="1" timestamp="2012-01-04T03:25:14Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968112"/>
     <nd ref="4294968115"/>
     <nd ref="4294968118"/>
@@ -4705,7 +4705,7 @@
     <nd ref="4294968112"/>
     <tag k="man_made" v="storage_tank"/>
   </way>
-  <way id="1110" version="1" timestamp="1970-01-16T08:14:07Z" changeset="10287854" uid="28756" user="Nescum">
+  <way id="1110" version="1" timestamp="2012-01-04T03:25:15Z" changeset="10287854" uid="28756" user="Nescum">
     <nd ref="4294968121"/>
     <nd ref="808"/>
     <nd ref="816"/>
@@ -4717,7 +4717,7 @@
     <nd ref="4294968121"/>
     <tag k="man_made" v="storage_tank"/>
   </way>
-  <way id="1111" version="1" timestamp="1970-01-16T08:14:08Z" changeset="10287880" uid="28756" user="Nescum">
+  <way id="1111" version="1" timestamp="2012-01-04T03:36:46Z" changeset="10287880" uid="28756" user="Nescum">
     <nd ref="4294968182"/>
     <nd ref="4294968180"/>
     <nd ref="863"/>
@@ -4729,7 +4729,7 @@
     <nd ref="4294968182"/>
     <tag k="building" v="yes"/>
   </way>
-  <way id="1112" version="1" timestamp="1970-01-16T09:23:01Z" changeset="10746315" uid="28756" user="Nescum">
+  <way id="1112" version="1" timestamp="2012-02-20T23:43:34Z" changeset="10746315" uid="28756" user="Nescum">
     <nd ref="4294968183"/>
     <nd ref="872"/>
     <nd ref="4294968190"/>
@@ -4737,7 +4737,7 @@
     <nd ref="4294968183"/>
     <tag k="building" v="hangar"/>
   </way>
-  <way id="1113" version="1" timestamp="1970-01-16T09:23:01Z" changeset="10746315" uid="28756" user="Nescum">
+  <way id="1113" version="1" timestamp="2012-02-20T23:43:35Z" changeset="10746315" uid="28756" user="Nescum">
     <nd ref="869"/>
     <nd ref="4294968184"/>
     <nd ref="4294968187"/>

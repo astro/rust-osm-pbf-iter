@@ -102,7 +102,13 @@ impl<'a> Relation<'a> {
                 1 => relation.id = Into::into(m.value),
                 2 => relation.tags_iter.set_keys(*m.value),
                 3 => relation.tags_iter.set_values(*m.value),
-                4 => relation.info = Some(Info::parse(&primitive_block.stringtable, *m.value)),
+                4 => {
+                    relation.info = Some(Info::parse(
+                        &primitive_block.stringtable,
+                        primitive_block.date_granularity,
+                        *m.value,
+                    ))
+                }
                 8 => relation.rels_iter.roles_sid = PackedIter::new(*m.value),
                 9 => relation.rels_iter.memids = DeltaEncodedIter::new(m.value),
                 10 => relation.rels_iter.types = PackedIter::new(*m.value),

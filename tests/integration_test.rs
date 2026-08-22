@@ -48,6 +48,46 @@ mod tests {
         );
     }
 
+    /// Regression test: a `PrimitiveBlock` with a non-default
+    /// `date_granularity` (60000ms, i.e. one minute -- real-world files
+    /// essentially always use the default of 1000ms/one second, which
+    /// is exactly why this bug went unnoticed: `Info::parse` used to
+    /// return `Info.timestamp` as the raw, un-scaled wire value, which
+    /// happens to equal true seconds-since-epoch when
+    /// `date_granularity` is 1000 -- silently wrong for any other
+    /// granularity, no error anywhere to flag it). Built by hand
+    /// against the OSM PBF protobuf schema, not via `osmium` like the
+    /// other fixtures here -- `osmium`'s PBF writer has no option to
+    /// set `date_granularity` to anything but the default, since no
+    /// real-world producer needs to. Contains one `Way` (id 1) with
+    /// `Info.timestamp` wire value `1` -- one `date_granularity` unit
+    /// since the epoch, i.e. `1 * 60000ms = 60000ms` =
+    /// `1970-01-01T00:01:00Z`. Independently confirmed against
+    /// `osmium cat -f opl`, which reports the same timestamp. Before
+    /// this crate's fix, `Info::parse` returned the raw wire value `1`
+    /// unscaled, i.e. `1970-01-01T00:00:01Z` -- one minute off.
+    #[test]
+    fn test_non_default_date_granularity() {
+        let mut reader = new_blob_reader("non_default_date_granularity.osm.pbf");
+        let blob = reader.find(|_| true).expect("one OSMData blob");
+        let data = blob.into_data();
+        let block = PrimitiveBlock::parse(&data);
+        assert_eq!(block.date_granularity, 60_000);
+
+        let ways: Vec<_> = block
+            .primitives()
+            .filter_map(|p| match p {
+                Primitive::Way(way) => Some(way),
+                _ => None,
+            })
+            .collect();
+        assert_eq!(ways.len(), 1);
+        assert_eq!(
+            ways[0].info.as_ref().and_then(|i| i.timestamp),
+            Some(60_000)
+        );
+    }
+
     fn new_blob_reader(filename: &str) -> BlobReader<BufReader<File>> {
         let path = test_data_path(filename);
         let file = File::open(&path).expect(&format!("cannot open {:?}", path));
@@ -189,5 +229,19 @@ mod tests {
             }
         }
         output
+    }
+
+    #[test]
+    #[ignore = "run by hand to regenerate tests/data/*.xml golden files after a parser change"]
+    fn regenerate_golden_files() {
+        for name in [
+            "multipolygon",
+            "64bit_ids",
+            "tag_lengths",
+            "two_primitive_groups",
+        ] {
+            let xml = dump(new_blob_reader(&format!("{name}.osm.pbf")));
+            std::fs::write(test_data_path(&format!("{name}.xml")), xml).unwrap();
+        }
     }
 }
